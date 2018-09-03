@@ -62,3 +62,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'materialize-sass', '~> 1.0.0.rc2'
 gem 'devise'
+gem 'ckeditor'
+gem 'paperclip'

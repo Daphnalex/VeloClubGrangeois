@@ -1,0 +1,21 @@
+<%= form_for @article, url: {action: "create"} do |f| %>
+  <div class="field">
+    <%= f.label :titre %>
+    <br/>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :résumé %>
+    <br/>
+    <%= f.text_field :resume %>
+  </div>
+  <div class="field">
+    <%= f.label :contenu %>
+    <br/>
+    <%= f.cktext_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Valider", class:"waves-effect waves-light btn" %>
+  </div>
+
+<% end %>
