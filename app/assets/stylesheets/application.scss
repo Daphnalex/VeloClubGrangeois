@@ -1,0 +1,111 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree .
+
+ */
+ @import "materialize";
+ @import "materialize/components/color-variables";
+ $primary-color: color("blue", "lighten-2") !default;
+ $secondary-color: color("yellow", "base") !default;
+ @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+ //VARIABLES
+
+ $club-jaune: #fdfa3b;
+ $club-bleu: #32aae1;
+
+ //GENRAL
+ html{
+   font-family: "Roboto","Helvetica","Arial",sans-serif;
+   font-size: 18px;
+ }
+
+ .full-screen {
+   height: 100%;
+   padding: 0px;
+   margin: 0px;
+   overflow: hidden;
+ }
+
+ .btn-add{
+   background-color: $club-bleu !important;
+   margin-top: 20px;
+ }
+
+ //NAV & PRESENTATION
+
+ nav {
+   background-color: $club-jaune;
+   color: grey;
+   margin-top: -20px;
+ }
+
+ nav ul a{
+   color: black;
+ }
+
+ div.fix-presentation{
+   height: 80px;
+ }
+
+ div.fix-presentation>div.logo>img{
+   float: left;
+   padding-left: 15px;
+   padding-top:15px;
+ }
+
+ div.panneau{
+   position: absolute;
+   margin-top: 300px;
+ }
+
+ div.panneau>img{
+   max-height: 90px;
+   padding-top: 10px;
+   position: relative;
+   z-index: 4
+  }
+
+  div.presentation{
+    max-height: 400px;
+    overflow: hidden;
+  }
+
+  .image-presentation{
+    padding: 0px !important;
+    width: 100%;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+ .image-presentation>img{
+   width: 100%;
+   transform: translateY(-20%);
+  }
+
+ div.connexion{
+   width: 100%;
+ }
+
+ div.connexion{
+   text-align: center;
+   color: #4a515b;
+ }
+
+ div.connexion>i{
+   font-size:50px;
+   padding-top: 15px;
+   margin: 0 auto;
+ }
