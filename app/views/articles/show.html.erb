@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <%= render "shared/head"%>
+  <%= render "shared/menu" %>
+</div>
+<div class="container-fluid background-article" style='background-image:url(<%= @article.picture %>)'>
+  <div class="row article-show">
+    <div class="col m2">
+    </div>
+    <div class="col m8 block-article">
+      <div class="row">
+        <div class="col m10">
+          <%= render "shared/return-btn", url: "/articles", title: "Retour aux articles" %>
+        </div>
+        <div class="col m1">
+          <%= render "shared/action-btn", url: "/articles/#{@article.id}#update", title: "mettre à jour" %>
+        </div>
+        <div class="col m1">
+          <%= render "shared/action-btn", url: "/articles#update/#{@article.id}#destroy", title: "supprimer" %>
+        </div>
+      </div>
+      <h1><%= @article.title %></h1>
+      <div class="article-content">
+        <div class="row">
+          <%= @article.content.html_safe %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

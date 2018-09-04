@@ -8,19 +8,7 @@
       <h1>Retours sur les évènements passés</h1>
     </div>
     <div class="col m1">
-      <!-- Modal Trigger -->
-        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-          <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
-          </div>
-          <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-          </div>
-        </div>
+      <%= render "shared/add-button" , url: 'articles/new'  %>
     </div>
   </div>
   <div class="row-fluid">
@@ -32,25 +20,26 @@
             <img src="<%=article.picture%>" alt="Image de :<%=article.title%>"/>
           </div>
           <div class="row title-article">
-            <h3><a href="entry.html"><%= article.title %></a></h3>
+            <h3>
+              <%= link_to "/articles/#{article.id}" do%>
+                <%= article.title %>
+              <% end %>
+            </h3>
           </div>
           <div class="row-fluid col m12 resume-article">
             <%= article.resume %>
           </div>
-          <div class="row-fluid information-article">
-            <div class="col m7">
+          <% if false %>
+            <div class="row-fluid information-article">
+              <div class="col m7">
+              </div>
+              <div class="row-fluid col m5 date-article">
+                <span>De <%=article.author%>, le <%= article.date.strftime('%m/%d/%Y') %> à <%= article.date.strftime('%H:%M:%S')%></span>
+              </div>
             </div>
-            <div class="row-fluid col m5 date-article">
-              <span>De <%=article.author%>, le <%= article.date.strftime('%m/%d/%Y') %> à <%= article.date.strftime('%H:%M:%S')%></span>
-            </div>
-          </div>
+          <%end%>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-<script>
-$(document).ready(function(){
-   $('.modal').modal();
- });
- </script

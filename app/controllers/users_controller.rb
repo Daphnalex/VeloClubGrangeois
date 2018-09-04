@@ -3,6 +3,7 @@ class UserController < ApplicationController
 
   def index
     @users = current_user.posts.all
+    console.log("current_user", current_user)
   end
 
   def new

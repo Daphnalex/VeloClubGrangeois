@@ -1,17 +1,22 @@
-<%= form_for @article, url: {action: "create"} do |f| %>
+<%= form_for @article, html: {multipart: false}, url: {action: "create"} do |f| %>
   <div class="field">
     <%= f.label :titre %>
-    <br/>
     <%= f.text_field :title %>
   </div>
+  <br/>
+  <div class="field">
+    <%= f.label :image %>
+    <br/>
+    <%= f.file_field :picture %>
+  </div>
+  <br/>
   <div class="field">
     <%= f.label :résumé %>
-    <br/>
     <%= f.text_field :resume %>
   </div>
+  <br/>
   <div class="field">
     <%= f.label :contenu %>
-    <br/>
     <%= f.cktext_area :content %>
   </div>
   <div class="actions">

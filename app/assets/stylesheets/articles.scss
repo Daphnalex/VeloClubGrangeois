@@ -37,7 +37,7 @@ div.media-article{
 
 div.media-article>img{
   width: 100%;
-  transform: translateY(-50%);
+    transform: translateY(-25%);
 }
 
 .title-article{
@@ -58,11 +58,31 @@ div.media-article>img{
   text-align: right;
 }
 
-form.new-article{
-  border: 1px solid rgba(0, 0, 0, 0.54);
+form.new_article{
+  border: 1px solid #f0f1f0;
   padding: 20px;
 }
 
 .waves-effect.waves-light.btn{
   margin-top: 25px;
+}
+
+.background-article{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width:100%;
+}
+
+.block-article{
+  background-color: white;
+  margin-top : 50px;
+}
+
+.row.article-show{
+  margin-bottom: 0 !important;
+}
+
+.article-content{
+    padding: 20px 30px 20px 30px;
 }

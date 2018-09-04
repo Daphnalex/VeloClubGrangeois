@@ -37,9 +37,17 @@
    overflow: hidden;
  }
 
- .btn-add{
+ .btn-action{
    background-color: $club-bleu !important;
    margin-top: 20px;
+ }
+
+ .btn-action.delete{
+   background-color: red !important;
+ }
+
+ .btn-action.create{
+   background-color: grey !important;
  }
 
  //NAV & PRESENTATION
@@ -55,7 +63,7 @@
  }
 
  div.fix-presentation{
-   height: 80px;
+   height: 95px;
  }
 
  div.fix-presentation>div.logo>img{
@@ -109,3 +117,8 @@
    padding-top: 15px;
    margin: 0 auto;
  }
+
+.waves-effect.waves-light.btn{
+  background-color: $club-bleu;
+  margin: 15px;
+}

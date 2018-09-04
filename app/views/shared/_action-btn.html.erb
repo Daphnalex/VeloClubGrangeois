@@ -1,0 +1,11 @@
+<%= link_to url, class: "btn-action btn-floating btn-large waves-effect waves-light right",  title: title do %>
+  <% if title == "mettre à jour" %>
+    <i class="material-icons ">
+      create
+    </i>
+  <% elsif title == 'supprimer' %>
+    <i class="material-icons">
+      delete
+    </i>
+  <%end%>
+<% end %>
