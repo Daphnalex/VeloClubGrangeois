@@ -1,13 +1,18 @@
-<%= link_to url, class: "btn-action btn-floating btn-large waves-effect waves-light right",  title: title do %>
-  <% if title == "Mettre à jour" %>
+
+<% if title == "Mettre à jour" %>
+  <%= link_to url, class: "btn-action btn-floating btn-large waves-effect waves-light right",  title: title do %>
     <i class="material-icons ">
       create
     </i>
-  <% elsif title == "Ajouter" %>
+  <% end %>
+<% elsif title == "Ajouter" %>
+  <%= link_to url, class: "btn-action btn-floating btn-large waves-effect waves-light right",  title: title do %>
     <i class="material-icons ">
       add
     </i>
-  <% elsif title == 'Supprimer' %>
+  <% end %>
+<% elsif title == 'Supprimer' %>
+  <%= link_to url,article: article, method: :delete, data: {confirm: "Confirmer la suppression ?"},class: "btn-action btn-floating btn-large waves-effect waves-light right",  title: title do %>
     <i class="material-icons">
       delete
     </i>

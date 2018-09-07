@@ -12,10 +12,10 @@
           <%= render "shared/return-btn", url: "/articles", title: "Retour aux articles" %>
         </div>
         <div class="col m1">
-          <%= render "shared/action-btn", url: "/articles/#{@article.id}", title: "Mettre à jour" %>
+          <%= render "shared/action-btn", url: edit_article_path(@article), title: "Mettre à jour" %>
         </div>
         <div class="col m1">
-          <%= render "shared/action-btn", url: "/articles/update/#{@article.id}", title: "Supprimer" %>
+          <%= render "shared/action-btn", url: "/articles/#{@article.id}",article: @article, title: "Supprimer" %>
         </div>
       </div>
       <h1><%= @article.title %></h1>
