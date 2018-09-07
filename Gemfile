@@ -64,3 +64,4 @@ gem 'materialize-sass', '~> 1.0.0.rc2'
 gem 'devise'
 gem 'ckeditor'
 gem "paperclip", "~> 6.0.0"
+gem 'jquery-rails'

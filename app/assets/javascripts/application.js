@@ -13,5 +13,12 @@
 //= require ckeditor/init
 //= require rails-ujs
 //= require activestorage
+//= require jquery
+//= require jquery_ujs
+//= require materialize
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+    $('.datepicker').datepicker();
+    console.log('TOTO')
+  });

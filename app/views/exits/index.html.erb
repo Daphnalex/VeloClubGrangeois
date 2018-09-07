@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <%= render "shared/head"%>
+  <%= render "shared/menu" %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col m11">
+      <h1>Sorties à venir</h1>
+    </div>
+    <div class="col m1">
+      <%= render "shared/action-btn" , url: 'exits/new', title:'Ajouter'  %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <% @exits.each do |exit| %>
+      <%= render "shared/cards", exit: exit %>
+    <% end %>
+  </div>
+</div>
