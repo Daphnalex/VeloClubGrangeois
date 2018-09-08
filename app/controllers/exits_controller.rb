@@ -1,6 +1,6 @@
 class ExitsController < ApplicationController
   def index
-    @exits = Exit.all
+    @exits = Exit.order('date ASC').page(params[:page]).per(7)
   end
 
   def new
@@ -18,6 +18,8 @@ class ExitsController < ApplicationController
 
   def edit
     @exit = Exit.find(params[:id])
+    @date = @exit.date.strftime("%d/%m/%Y")
+    @exit.date = @date
   end
 
   def update

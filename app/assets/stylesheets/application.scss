@@ -9,6 +9,8 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
+
+ *= require jquery-ui
  *= require_self
  *= require_tree .
 
@@ -37,6 +39,16 @@
    overflow: hidden;
  }
 
+ h1{
+   font-size: 24px;
+   font-weight: 500 !important;
+   color: rgba(0,0,0,.54);
+   text-transform: uppercase;
+   margin: 50px 0px 30px 0px;
+   padding-left: 10px;
+   border-left: 5px solid #32aae1;
+ }
+
  .btn-action{
    background-color: $club-bleu !important;
    margin-top: 20px;
@@ -52,7 +64,7 @@
 
  //NAV & PRESENTATION
 
- nav {
+ nav.navbar {
    background-color: $club-jaune;
    color: grey;
    margin-top: -20px;
@@ -120,5 +132,18 @@
 
 .waves-effect.waves-light.btn{
   background-color: $club-bleu;
-  margin: 15px;
+  margin: 35px;
+}
+
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all{
+  background-color: $club-bleu;
+  color: white;
+}
+
+ul.pagination{
+  text-align: center;
+}
+
+.pagination li.active{
+  background-color: $club-bleu;
 }

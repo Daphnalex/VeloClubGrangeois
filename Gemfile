@@ -65,3 +65,5 @@ gem 'devise'
 gem 'ckeditor'
 gem "paperclip", "~> 6.0.0"
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'kaminari'
