@@ -15,7 +15,7 @@
           <%= render "shared/action-btn", url: edit_article_path(@article), title: "Mettre à jour" %>
         </div>
         <div class="col m1">
-          <%= render "shared/action-btn", url: "/articles/#{@article.id}",article: @article, title: "Supprimer" %>
+          <%= render "shared/action-btn", url: "/articles/#{@article.id}",variable_data: @article, title: "Supprimer" %>
         </div>
       </div>
       <h1><%= @article.title %></h1>

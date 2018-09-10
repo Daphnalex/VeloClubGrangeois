@@ -12,15 +12,15 @@
     </div>
   </div>
   <div class="row">
-    <div class="col m12">
-      <%= paginate @exits, theme: ''%>
-    </div>
-  </div>
-  <div class="row">
     <% @exits.each do |exit| %>
       <% if exit.date >= Date.today %>
         <%= render "shared/cards", exit: exit %>
       <%end%>
     <% end %>
+  </div>
+  <div class="row">
+    <div class="col m12">
+      <%= paginate @exits, theme: ''%>
+    </div>
   </div>
 </div>

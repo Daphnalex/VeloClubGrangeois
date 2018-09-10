@@ -1,0 +1,26 @@
+<%= form_for @club do |f| %>
+  <div class="field">
+    <%= f.label :intitulé_du_poste %>
+    <%= f.text_field :title, value: nil, placeholder: 'Le boss' %>
+  </div>
+  <div class="field">
+    <%= f.label :nom_complet %>
+    <%= f.text_field :name, value: nil, placeholder: "Richard Virenque" %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label :numéro_de_téléphone %>
+    <%= f.telephone_field :phone, value: nil, placeholder: "0123456789", onkeyup: "verif_nombre(this)", maxlength: 10 %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label :mail %>
+    <%= f.text_field :email, value: nil, placeholder: "xxxxxxxx@xxxx.xx", class: "formfield", mouseout: "validateEmail(this)" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Valider", class:"waves-effect waves-light btn" %>
+  </div>
+<% end %>
+<% if @error %>
+  <div><%= error %></div>
+<% end %>

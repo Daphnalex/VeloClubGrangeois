@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_07_191839) do
+ActiveRecord::Schema.define(version: 2018_09_10_132359) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 2018_09_07_191839) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
+
+  create_table "clubs", force: :cascade do |t|
+    t.string "title"
+    t.string "name"
+    t.string "phone"
+    t.string "mail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "exits", force: :cascade do |t|

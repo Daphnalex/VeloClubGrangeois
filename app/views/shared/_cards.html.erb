@@ -6,11 +6,7 @@
         <div class="col s10">
           <span class="card-title"><%= exit.title %></span>
         </div>
-        <%= link_to exit, method: :delete, data: {confirm: "Confirmer la suppression ?"},class: "col s1 waves-light icon right" do %>
-          <i class="material-icons">
-            delete
-          </i>
-        <%end%>
+        <%= render "shared/action-btn", url: "/articles/#{exit.id}",variable_data: @exit, title: "Supprimer" %>
         <div class="col s1">
           <%= link_to edit_exit_path(exit), class: "icon waves-light right" do %>
             <i class="material-icons ">

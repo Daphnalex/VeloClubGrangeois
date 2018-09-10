@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col m12">
+      <%= render "shared/return-btn" , url: clubs_path(), title: "retour à la liste des membres"  %>
+    </div>
+    <div class="col m11">
+      <h1>Ajouter un membre</h1>
+    </div>
+  </div>
+  <div class="row-fluid">
+      <%= render "shared/club_form", error: @error %>
+  </div>
+</div>
