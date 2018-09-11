@@ -10,10 +10,19 @@ class ClubsController < ApplicationController
 
   def create
     @club = Club.new(club_params)
-    if @club.mail && @club.save
+    if @club.valid?
+      @club.save
       redirect_to clubs_path
     else
-      @club.mail = ""
+      if @club.errors.to_hash[:title]
+        @error_title = "Veuillez indiquer un intitulé de poste"
+      end
+      if @club.errors.to_hash[:name]
+        @error_name = "Veuillez indiquer un nom"
+      end
+      if @club.errors.to_hash[:phone]
+        @error_phone = "Numéro de téléphone invalide"
+      end
       render :new
     end
   end
@@ -21,6 +30,16 @@ class ClubsController < ApplicationController
   def edit
     @club = Club.find(params[:id])
   end
+
+  def update
+    @club = Club.find(params[:id])
+    if @club.update_attributes(club_params)
+      redirect_to clubs_path
+    else
+      render :edit
+    end
+  end
+
 
   def show
     @club = Club.find(params[:id])
@@ -38,7 +57,7 @@ class ClubsController < ApplicationController
 
   private
     def club_params
-      params.require(:club).permit(:title, :name, :telephone, :mail)
+      params.require(:club).permit(:title, :name, :phone, :mail)
     end
 
 end

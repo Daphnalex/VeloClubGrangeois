@@ -1,4 +1,6 @@
 class Club < ApplicationRecord
-  before_save { self.mail = mail.downcase }
-   
+  validates :phone, length: { is: 10 }, presence: true
+  validates :title, presence: true
+  validates :name, presence: true
+  validates :mail, presence: true
 end

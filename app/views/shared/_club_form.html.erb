@@ -1,26 +1,25 @@
 <%= form_for @club do |f| %>
   <div class="field">
     <%= f.label :intitulé_du_poste %>
-    <%= f.text_field :title, value: nil, placeholder: 'Le boss' %>
+    <%= f.text_field :title, placeholder: 'Le boss' %>
   </div>
+  <div class="error"><%= @error_title %></div>
   <div class="field">
     <%= f.label :nom_complet %>
-    <%= f.text_field :name, value: nil, placeholder: "Richard Virenque" %>
+    <%= f.text_field :name, placeholder: "Richard Virenque" %>
   </div>
+  <div class="error"><%= @error_name %></div>
   <br/>
   <div class="field">
     <%= f.label :numéro_de_téléphone %>
-    <%= f.telephone_field :phone, value: nil, placeholder: "0123456789", onkeyup: "verif_nombre(this)", maxlength: 10 %>
+    <%= f.telephone_field :phone, placeholder: "0123456789", pattern: "[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}", onkeyup: "verif_nombre(this)", size: 10, maxlength: 10, class: "formfield" %>
   </div>
   <br/>
   <div class="field">
     <%= f.label :mail %>
-    <%= f.text_field :email, value: nil, placeholder: "xxxxxxxx@xxxx.xx", class: "formfield", mouseout: "validateEmail(this)" %>
+    <%= f.email_field :mail, placeholder: "xxxxxxxx@xxxx.xx", class: "formfield" %>
   </div>
   <div class="actions">
     <%= f.submit "Valider", class:"waves-effect waves-light btn" %>
   </div>
-<% end %>
-<% if @error %>
-  <div><%= error %></div>
 <% end %>

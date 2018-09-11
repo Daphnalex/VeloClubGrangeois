@@ -19,7 +19,8 @@
               <th width="20%">Nom</th>
               <th width="20%">Numéro de téléphone</th>
               <th width="20%">Adresse mail</th>
-              <th width="20%"></th>
+              <th width="5%"></th>
+              <th width="5%"></th>
           </tr>
         </thead>
         <tbody>
@@ -27,11 +28,10 @@
           <tr>
             <td><%=club.title%></td>
             <td><%=club.name%></td>
-            <td><%= number_to_phone(club.phone) %></td>
+            <td><%= num_to_phone(club.phone) %></td>
             <td><%=club.mail%></td>
-            <td><%= render 'shared/action-btn', url: edit_club_path(club.id), title: 'Mettre à jour'%>
-              <%= render "shared/action-btn", url: "/clubs/#{club.id}",variable_data: @club, title: "Supprimer" %>
-            </td>
+            <td><div><%= render 'shared/action-btn', url: edit_club_path(club.id), title: 'Mettre à jour'%></div></td>
+            <td></div><%= render "shared/action-btn", url: "/clubs/#{club.id}",variable_data: @club, title: "Supprimer" %></div></td>
           </tr>
           <%end%>
         </tbody>
