@@ -2,39 +2,49 @@
   <%= render "shared/head"%>
   <%= render "shared/menu" %>
 </div>
-<div class="container">
+<div class="container-fluid content">
   <div class="row">
-    <div class="col m10">
-      <h1>Membres du bureau</h1>
+    <div class="col m7 member-club">
+      <div class="col m10">
+        <h1>Membres du bureau</h1>
+      </div>
+      <div class="col m2">
+        <%= render "shared/action-btn" , url: 'clubs/new', title:'Ajouter'  %>
+      </div>
+      <div class="row">
+        <table class="club_table striped">
+            <tbody>
+              <% @clubs.each do |club|%>
+              <tr>
+                <td width="20%" class="center"><%=club.title%></td>
+                <td width="20%" class="center"><%=club.name%></td>
+                <td width="25%" class="center"><%= num_to_phone(club.phone) %></td>
+                <td width="31%"><%=club.mail%></td>
+                <td width="2%" class="table-btn"><div><%= render 'shared/action-btn', url: edit_club_path(club.id), title: 'Mettre à jour'%></div></td>
+                <td width="2%" class="table-btn"><div><%= render "shared/action-btn", url: "/clubs/#{club.id}",variable_data: @club, title: "Supprimer" %></div></td>
+              </tr>
+              <%end%>
+            </tbody>
+        </table>
+      </div>
     </div>
-    <div class="col m2">
-      <%= render "shared/action-btn" , url: 'clubs/new', title:'Ajouter'  %>
+    <div class="col m5 life-club">
+      <div class="row">
+        <div class="col m10">
+          <h1>La vie du club</h1>
+        </div>
+        <div class="col m2">
+          <%= render "shared/action-btn" , url: 'reports/new', title:'Ajouter'  %>
+        </div>
+      </div>
+      <div class="row content">
+        <% @reports.each do |report| %>
+          <div class="col m8"><%= report.title%></div>
+          <div class="col m2">
+            
+          </div>
+        <%end%>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <table class="striped">
-        <thead>
-          <tr>
-              <th width="20%">Poste</th>
-              <th width="20%">Nom</th>
-              <th width="20%">Numéro de téléphone</th>
-              <th width="20%">Adresse mail</th>
-              <th width="5%"></th>
-              <th width="5%"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @clubs.each do |club|%>
-          <tr>
-            <td><%=club.title%></td>
-            <td><%=club.name%></td>
-            <td><%= num_to_phone(club.phone) %></td>
-            <td><%=club.mail%></td>
-            <td><div><%= render 'shared/action-btn', url: edit_club_path(club.id), title: 'Mettre à jour'%></div></td>
-            <td></div><%= render "shared/action-btn", url: "/clubs/#{club.id}",variable_data: @club, title: "Supprimer" %></div></td>
-          </tr>
-          <%end%>
-        </tbody>
-      </table>
   </div>
 </div>

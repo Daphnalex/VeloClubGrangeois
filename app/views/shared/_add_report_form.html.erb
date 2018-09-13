@@ -1,0 +1,16 @@
+<%= form_for @report, html: {multipart: false} do |f| %>
+  <div class="field">
+    <%= f.label :titre %>
+    <%= f.text_field :title %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label :fichier %>
+    <br/>
+    <%= f.file_field :file %>
+  </div>
+  <br/>
+  <div class="actions">
+    <%= f.submit "Valider", class:"waves-effect waves-light btn" %>
+  </div>
+<% end %>

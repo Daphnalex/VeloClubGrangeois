@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :articles
   resources :exits
   resources :clubs
+  resources :reports, except: :index
+
 end

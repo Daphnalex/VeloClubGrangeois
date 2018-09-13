@@ -15,16 +15,12 @@
  *= require_tree .
 
  */
- @import "materialize";
- @import "materialize/components/color-variables";
- $primary-color: color("blue", "lighten-2") !default;
- $secondary-color: color("yellow", "base") !default;
- @import "https://fonts.googleapis.com/icon?family=Material+Icons";
-
- //VARIABLES
-
- $club-jaune: #fdfa3b;
- $club-bleu: #32aae1;
+@import "materialize";
+@import "materialize/components/color-variables";
+$primary-color: color("blue", "lighten-2") !default;
+$secondary-color: color("yellow", "base") !default;
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "variables.scss";
 
  //GENRAL
  html{
@@ -44,7 +40,7 @@
    font-weight: 500 !important;
    color: rgba(0,0,0,.54);
    text-transform: uppercase;
-   margin: 50px 0px 30px 0px;
+   margin: 30px 0px 30px 0px;
    padding-left: 10px;
    border-left: 5px solid #32aae1;
  }

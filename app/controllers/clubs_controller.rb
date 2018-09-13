@@ -2,6 +2,7 @@ class ClubsController < ApplicationController
 
   def index
     @clubs = Club.all
+    @reports = Report.all
   end
 
   def new

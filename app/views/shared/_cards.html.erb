@@ -6,13 +6,11 @@
         <div class="col s10">
           <span class="card-title"><%= exit.title %></span>
         </div>
-        <%= render "shared/action-btn", url: "/articles/#{exit.id}",variable_data: @exit, title: "Supprimer" %>
-        <div class="col s1">
-          <%= link_to edit_exit_path(exit), class: "icon waves-light right" do %>
-            <i class="material-icons ">
-              create
-            </i>
-          <% end %>
+        <div class="col s1 no_bg_color">
+          <%= render "shared/action-btn", url: "/exits/#{exit.id}/edit", variable_data: @exit, title: "Mettre à jour" %>
+        </div>
+        <div class="col s1 no_bg_color">
+          <%= render "shared/action-btn", url: "/exits/#{exit.id}", variable_data: @exit, title: "Supprimer" %>
         </div>
         <p class="col s12"><%= exit.description %></p>
       </div>

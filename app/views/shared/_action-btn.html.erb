@@ -17,4 +17,10 @@
       delete
     </i>
   <%end%>
+<% elsif title=='Télécharger'%>
+  <%= link_to url, class: "btn-action btn-floating btn-large waves-effect waves-light right",  title: title do %>
+    <i class="material-icons">
+      file_download
+    </i>
+  <%end%>
 <% end %>

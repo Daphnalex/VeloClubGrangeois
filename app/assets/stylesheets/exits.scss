@@ -13,3 +13,7 @@
 .info{
   text-align: center;
 }
+.no_bg_color > .btn-action.btn-floating.btn-large.waves-effect.waves-light.right{
+  background-color: inherit !important;
+  box-shadow: none !important;
+}
