@@ -3,11 +3,17 @@
     <%= f.label :titre %>
     <%= f.text_field :title %>
   </div>
+  <div class="error">
+    <%= @error_report_title %>
+  </div>
   <br/>
   <div class="field">
     <%= f.label :fichier %>
     <br/>
-    <%= f.file_field :file %>
+    <%= f.file_field :document %>
+  </div>
+  <div class="error">
+    <%= @error_report_file %>
   </div>
   <br/>
   <div class="actions">

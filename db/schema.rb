@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_13_201237) do
+ActiveRecord::Schema.define(version: 2018_09_14_195539) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 2018_09_13_201237) do
 
   create_table "reports", force: :cascade do |t|
     t.string "title"
-    t.string "file"
     t.string "document_file_name"
     t.string "document_content_type"
     t.integer "document_file_size"

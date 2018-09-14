@@ -58,6 +58,20 @@ td.table-btn{
   background-color: #f1f0f1;
 }
 
+.life-club .content .btn-action{
+  background-color: inherit !important;
+  box-shadow: none;
+  margin:0px !important;
+}
+
+.life-club .content .btn-action i.material-icons{
+  color: $club-bleu !important;
+}
+
+.life-club .report{
+  vertical-align: text-top;
+}
+
 .life-club .content{
   padding: 5px 20px 5px 20px;
 }
@@ -65,4 +79,21 @@ td.table-btn{
 .member-club{
   padding-left: 20px !important;
   padding-right: 40px !important;
+}
+
+.report-title{
+  height: 56px;
+  padding-top:10px !important;
+}
+
+.report-document{
+  height: 35px !important;
+}
+
+.row.report{
+  margin-bottom: 0px !important;
+}
+
+hr{
+  border: 0.3px solid $club-bleu;
 }

@@ -39,10 +39,13 @@
       </div>
       <div class="row content">
         <% @reports.each do |report| %>
-          <div class="col m8"><%= report.title%></div>
-          <div class="col m2">
-            
+          <div class="row report">
+            <div class="col m8 report-title"><%= report.title%></div>
+            <div class="col m2 report-document">
+              <%= render "shared/action-btn", url: report.document.url, title: "Télécharger"%>
+            </div>
           </div>
+          <hr/>
         <%end%>
       </div>
     </div>

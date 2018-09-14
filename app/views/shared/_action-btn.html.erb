@@ -12,13 +12,13 @@
     </i>
   <% end %>
 <% elsif title == 'Supprimer' %>
-  <%= link_to url, data: variable_data, method: :delete, data: {confirm: "Confirmer la suppression ?"},class: "btn-action btn-floating btn-large waves-effect waves-light right",  title: title do %>
+  <%= link_to url, data: variable_data, method: :delete, data: {confirm: "Confirmer la suppression ?"}, class: "btn-action btn-floating btn-large waves-effect waves-light right",  title: title do %>
     <i class="material-icons">
       delete
     </i>
   <%end%>
 <% elsif title=='Télécharger'%>
-  <%= link_to url, class: "btn-action btn-floating btn-large waves-effect waves-light right",  title: title do %>
+  <%= link_to url, class: "btn-action btn-floating btn-large waves-effect waves-light right", target: :_blank, title: title do %>
     <i class="material-icons">
       file_download
     </i>
