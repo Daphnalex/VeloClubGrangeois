@@ -1,4 +1,4 @@
-<%= form_for @report, html: {multipart: false} do |f| %>
+<%= form_for @report, type_action: type_action, html: {multipart: false} do |f| %>
   <div class="field">
     <%= f.label :titre %>
     <%= f.text_field :title %>
@@ -7,11 +7,25 @@
     <%= @error_report_title %>
   </div>
   <br/>
-  <div class="field">
-    <%= f.label :fichier %>
-    <br/>
-    <%= f.file_field :document %>
-  </div>
+  <%if type_action="new"%>
+    <div class="field">
+      <%= f.label :fichier %>
+      <br/>
+      <%= f.file_field :document %>
+    </div>
+  <%elsif type_action="edit"%>
+    <div>
+      Fichier : <%= @report.document_file_name %>
+    </div>
+    <div>
+      Importer un autre fichier :
+    </div>
+    <div class="field">
+      <%= f.label :fichier %>
+      <br/>
+      <%= f.file_field :document %>
+    </div>
+  <%end%>
   <div class="error">
     <%= @error_report_file %>
   </div>

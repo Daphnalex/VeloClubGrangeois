@@ -2,7 +2,7 @@ class ClubsController < ApplicationController
 
   def index
     @clubs = Club.all
-    @reports = Report.order('date ASC')
+    @reports = Report.order('document_updated_at DESC')
   end
 
   def new

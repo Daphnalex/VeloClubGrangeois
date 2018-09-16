@@ -40,12 +40,19 @@
       <div class="row content">
         <% @reports.each do |report| %>
           <div class="row report">
-            <div class="col m8 report-title"><%= report.title%></div>
-            <div class="col m2 report-document">
+            <div class="col m9 report-title"><%= report.title%></div>
+            <div class="col m1 report-document">
               <%= render "shared/action-btn", url: report.document.url, title: "Télécharger"%>
             </div>
+            <div class="col m1 report-update">
+              <%= render 'shared/action-btn', url: edit_report_path(report.id), title: 'Mettre à jour'%>
+            </div>
+            <div class="col m1 report-delete">
+              <%= render "shared/action-btn", url: "/reports/#{report.id}",variable_data: @report, title: "Supprimer" %>
+            </div>
+            <hr/>
           </div>
-          <hr/>
+
         <%end%>
       </div>
     </div>

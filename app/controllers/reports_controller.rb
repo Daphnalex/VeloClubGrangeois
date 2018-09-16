@@ -19,8 +19,31 @@ class ReportsController < ApplicationController
       if @report.errors.to_hash(:document)
         @error_report_file = "Votre fichier présente un problème"
       end
-      binding.pry 
+      binding.pry
       render :new
+    end
+  end
+
+  def edit
+    @report = Report.find(params[:id])
+    puts 'DOCUMENT'
+    puts @report.inspect
+  end
+
+  def update
+    @report = Report.find(params[:id])
+    if @report.update_attributes(report_params)
+      redirect_to clubs_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @report = Report.find(params[:id])
+    if @report.destroy
+      flash[:success] = "Compte-rendu supprimé"
+      redirect_to clubs_path()
     end
   end
 
