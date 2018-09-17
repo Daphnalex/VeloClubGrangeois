@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :exits
   resources :clubs
   resources :reports, except: :index
-
+  resources :stocks
+  
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_14_195539) do
+ActiveRecord::Schema.define(version: 2018_09_17_152841) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -68,6 +68,20 @@ ActiveRecord::Schema.define(version: 2018_09_14_195539) do
     t.string "document_content_type"
     t.integer "document_file_size"
     t.datetime "document_updated_at"
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.string "title"
+    t.integer "quantity"
+    t.datetime "date"
+    t.string "front_image_file_name"
+    t.string "front_image_content_type"
+    t.integer "front_image_file_size"
+    t.datetime "front_image_updated_at"
+    t.string "back_image_file_name"
+    t.string "back_image_content_type"
+    t.integer "back_image_file_size"
+    t.datetime "back_image_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

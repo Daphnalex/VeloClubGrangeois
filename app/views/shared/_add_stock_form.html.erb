@@ -1,0 +1,65 @@
+<%= form_for @stock, html: {multipart: false} do |f| %>
+  <div class="field">
+    <%= f.label :titre %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="error">
+    <%= @error_stock_title %>
+  </div>
+  <br/>
+  <%if type_action=="new"%>
+    <div class="field">
+      <%= f.label :devant_du_vêtement %>
+      <br/>
+      <%= f.file_field :front_image %>
+    </div>
+    <div class="error">
+      <%= @error_stock_front_image %>
+    </div>
+    <br/>
+    <div class="field">
+      <%= f.label :dos_du_vêtement %>
+      <br/>
+      <%= f.file_field :back_image %>
+    </div>
+    <div class="error">
+      <%= @error_stock_back_image %>
+    </div>
+  <%elsif type_action=="edit"%>
+    <%=f.label :images_associées%>
+    <br/>
+    <div class="italic">
+      <%= @stock.front_image_file_name %><br/>
+      <%= @stock.back_image_file_name %><br/>
+    </div>
+    <br/>
+    <div class="field}">
+      <%= f.label :modifier_image_du_devant, class: "#{type_action}" %>
+      <br/>
+      <div><%= f.file_field :front_image %></div>
+      <div class="error">
+        <%= @error_stock_front_image %>
+      </div>
+      <br/>
+      <%= f.label :modifier_image_du_dos, class: "#{type_action}" %>
+      <br/>
+      <div><%= f.file_field :back_image %></div>
+      <div class="error">
+        <%= @error_stock_back_image %>
+      </div>
+    </div>
+  <%end%>
+  <br/>
+  <div class="field">
+    <%= f.label :quantité %>
+    <br/>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="error">
+    <%= @error_stock_quantity %>
+  </div>
+  <br/>
+  <div class="actions">
+    <%= f.submit "Valider", class:"waves-effect waves-light btn" %>
+  </div>
+<% end %>

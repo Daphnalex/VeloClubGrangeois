@@ -45,6 +45,12 @@ $secondary-color: color("yellow", "base") !default;
    border-left: 5px solid #32aae1;
  }
 
+ h2{
+   text-align: center;
+   font-size: 1.6em;
+   text-transform: uppercase;
+ }
+
  .btn-action{
    background-color: $club-bleu !important;
    margin-top: 20px;
@@ -142,4 +148,12 @@ ul.pagination{
 
 .pagination li.active{
   background-color: $club-bleu;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+.italic{
+  font-style: italic;
 }

@@ -7,21 +7,21 @@
     <%= @error_report_title %>
   </div>
   <br/>
-  <%if type_action="new"%>
+  <%if type_action=="new"%>
     <div class="field">
-      <%= f.label :fichier %>
+      <%= f.label :fichier, class: "#{type_action}"%>
       <br/>
       <%= f.file_field :document %>
     </div>
-  <%elsif type_action="edit"%>
-    <div>
-      Fichier : <%= @report.document_file_name %>
+  <%elsif type_action=="edit"%>
+    <%=f.label :fichier_associé%>
+    <br/>
+    <div class="italic">
+      <%= @report.document_file_name %>
     </div>
-    <div>
-      Importer un autre fichier :
-    </div>
-    <div class="field">
-      <%= f.label :fichier %>
+    <br/>
+    <div class="field}">
+      <%= f.label :modifier_le_fichier, class: "#{type_action}" %>
       <br/>
       <%= f.file_field :document %>
     </div>

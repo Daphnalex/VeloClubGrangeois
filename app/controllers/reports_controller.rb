@@ -19,15 +19,12 @@ class ReportsController < ApplicationController
       if @report.errors.to_hash(:document)
         @error_report_file = "Votre fichier présente un problème"
       end
-      binding.pry
       render :new
     end
   end
 
   def edit
     @report = Report.find(params[:id])
-    puts 'DOCUMENT'
-    puts @report.inspect
   end
 
   def update
