@@ -64,6 +64,10 @@ $secondary-color: color("yellow", "base") !default;
    background-color: grey !important;
  }
 
+ input.btn.btn-primary{
+   background-color: $club-bleu !important;
+ }
+
  //NAV & PRESENTATION
 
  nav.navbar {

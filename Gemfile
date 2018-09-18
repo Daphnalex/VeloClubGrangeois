@@ -68,3 +68,4 @@ gem "paperclip", "~> 6.0.0"
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'kaminari'
+gem 'mail_form'

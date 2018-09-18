@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :clubs
   resources :reports, except: :index
   resources :stocks
-  
+  resources :contacts, only: [:new, :create]
 end

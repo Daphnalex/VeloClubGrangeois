@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <%= render "shared/head"%>
+  <%= render "shared/menu" %>
+</div>
+<div class="container-fluid content">
+  <div class="row">
+    <div class="col m2"></div>
+    <div class="col m8 member-club">
+      <h1>Formulaire de contact</h1>
+      <div class="row-fluid">
+        <div class="undertitle">Envoyez nous un message</div>
+        <%= form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+          <%= f.label :nom%>
+          <%= f.text_field :name, :required => true %>
+          <br/>
+          <%= f.label :email%>
+          <%=f.email_field :email, :required => true %>
+          <br/>
+          <%= f.label :message%>
+          <%= f.text_area :message, as: :text, :required => true %>
+          <div class= "hidden">
+            <%= f.label :nickname%>
+            <%=f.text_field :nickname, hint: "Quitter ce champ blanc"%>
+          </div>
+          <div>
+            </br>
+            <%= f.submit 'Envoyer message', :class=> "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
