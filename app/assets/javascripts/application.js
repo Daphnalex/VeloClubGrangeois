@@ -40,6 +40,11 @@
       });
 
       $(".error").show().delay(3000).fadeOut();
+
+      $('.carousel.carousel-slider').carousel({
+        fullWidth: true,
+        indicators: true
+      });
   })
 
 function verif_nombre(champ){

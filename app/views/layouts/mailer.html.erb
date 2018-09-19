@@ -3,11 +3,71 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
-      /* Email styles need to be inline */
+      .email_content{
+        font-size: 16px;
+        margin: 20px;
+        border: 1px solid #32aae1;
+      }
+      .head_title_emailing{
+        font-size: 20px;
+        background-color: #32aae1;
+        margin-bottom: 20px;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 20px;
+      }
+      hr{
+        border: 1px dashed #32aae1;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      .bold{
+        font-weight: bold;
+      }
+      .italic{
+        font-style: italic;
+        text-align: center;
+      }
+      .grey{
+        background-color: #f1f0f1;
+      }
+      .right{
+        text-align: right;
+        font-style: italic;
+        font-size: 14px;
+      }
+      .content{
+        padding: 10px 20px 10px 20px;
+      }
     </style>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="email_content">
+    <div class="head_title_emailing">
+      Message envoyé
+    </div>
+    <div class="marge">
+    <div class="italic">
+      Une personne vous a contacté via le formulaire de contact de : http://www.veloclubgrangeois.fr
+    </div>
+    <hr/>
+    <div class="content"><span class="bold">Expéditeur :</span>
+      <%= @contact.name %>
+    </div>
+    <hr/>
+    <div class="content">
+      <span class="bold">Email de contact :</span>
+       <%= @contact.email %>
+    </div>
+    <hr/>
+    <div class="grey content">
+      <span class="bold">Message :</span><br/><br/>
+      <%= @contact.message %>
+    </div>
+    <div class="right content">
+      Envoyé à <span class="bold"><%= Time.now.strftime("%d/%m/%Y, %H:%M:%S") %></span>
+    </div>
+
   </body>
 </html>
