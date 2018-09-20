@@ -16,13 +16,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require materialize
 //= require turbolinks
+//= require materialize
+//= require materialize-sprockets
+//= require jquery.slick
 //= require_tree .
 
 
   $( document ).on('turbolinks:load', function() {
-    console.log("It works on each visit!");
+    console.log("Jquery works !");
 
     $( ".datepicker" ).datepicker({
       altField: ".datepicker",
@@ -40,12 +42,19 @@
       });
 
       $(".error").show().delay(3000).fadeOut();
-
+      // $('.slider').slick({
+      //   slidesToShow: 4,
+      //   slidesToScroll: 4,
+      //   dots: true
+      // });
       $('.carousel.carousel-slider').carousel({
         fullWidth: true,
         indicators: true
       });
   })
+
+
+
 
 function verif_nombre(champ){
 	var chiffres = new RegExp("[0-9]");

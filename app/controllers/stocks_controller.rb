@@ -56,7 +56,7 @@ class StocksController < ApplicationController
 
   private
     def stock_params
-      params.require(:stock).permit(:title, :front_image, :back_image, :quantity)
+      params.require(:stock).permit(:title, :front_image, :back_image, :quantity, :slider)
     end
 
 end

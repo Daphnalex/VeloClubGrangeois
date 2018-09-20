@@ -1,21 +1,21 @@
 <nav class="navbar">
-  <div class="nav-wrapper">
-    <ul class="left hide-on-med-and-down">
-      <li><%= link_to root_path do %>HOME<% end %></li>
-      <li><%= link_to clubs_path do %>LE CLUB<% end %></li>
-      <li><%= link_to articles_path do %>ARTICLES<% end %></li>
-      <li><%= link_to exits_path do %>SORTIES<% end %></li>
-      <li><%= link_to stocks_path do %>STOCKS<% end %></li>
-      <li><%= link_to new_contact_path do %>CONTACTEZ-NOUS<% end %></li>
+  <div class="nav-wrapper row">
+    <ul class="left hide-on-med-and-down col m5">
+      <li class="col m1"></li>
+      <li class="col m3"><%= link_to clubs_path do %>LE CLUB<% end %></li>
+      <li class="col m3"><%= link_to articles_path do %>ARTICLES<% end %></li>
+      <li class="col m3"><%= link_to articles_path do %>ALBUMS<% end %></li>
     </ul>
-    <ul class="right hide-on-med-and-down">
-      <li>
-        <% if user_signed_in? %>
-          Se connecter
-        <% else %>
-          <%= link_to "Login", root_path %>
-        <% end %>
-      </li>
+    <ul class="col m2">
+      <%= link_to root_path do %>
+        <%= image_tag "granges" %>
+      <% end %>
+    </ul>
+    <ul class="right hide-on-med-and-down col m5">
+      <li class="col m1"></li>
+      <li class="col m3"><%= link_to exits_path do %>SORTIES<% end %></li>
+      <li class="col m3"><%= link_to stocks_path do %>STOCKS<% end %></li>
+      <li class="col m5"><%= link_to new_contact_path do %>CONTACTEZ-NOUS<% end %></li>
     </ul>
   </div>
 </nav>

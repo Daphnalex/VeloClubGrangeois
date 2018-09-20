@@ -21,6 +21,8 @@ $primary-color: color("blue", "lighten-2") !default;
 $secondary-color: color("yellow", "base") !default;
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "variables.scss";
+@import "slick";
+@import 'slick-theme';
 
  //GENRAL
  html{
@@ -71,13 +73,17 @@ $secondary-color: color("yellow", "base") !default;
  //NAV & PRESENTATION
 
  nav.navbar {
-   background-color: $club-jaune;
+   background-color: white;
    color: grey;
    margin-top: -20px;
+   height: 125px;
+   padding-top: 25px;
+   border-bottom: 25px solid $club-jaune;
  }
 
  nav ul a{
    color: black;
+   text-align: center;
  }
 
  div.fix-presentation{
@@ -160,4 +166,22 @@ ul.pagination{
 
 .italic{
   font-style: italic;
+}
+
+
+input#article_slider, input#exit_slider, input#stock_slider{
+  position: relative;
+  opacity: 1;
+  pointer-events: inherit;
+  height: 20px;
+  width: 20px;
+  top: 5px;
+}
+
+.field.checkbox{
+  margin-top: 20px;
+}
+
+label.label_checkbox{
+  margin-right: 15px;
 }

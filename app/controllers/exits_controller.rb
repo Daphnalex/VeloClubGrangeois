@@ -44,6 +44,6 @@ class ExitsController < ApplicationController
   private
 
   def exit_params
-    params.require(:exit).permit(:title, :description, :date, :city)
+    params.require(:exit).permit(:title, :description, :date, :city, :slider)
   end
 end

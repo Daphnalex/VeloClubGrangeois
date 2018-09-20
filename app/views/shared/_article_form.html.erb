@@ -19,6 +19,11 @@
     <%= f.label :contenu %>
     <%= f.cktext_area :content %>
   </div>
+  <div class="field checkbox">
+    <%= f.label :mettre_en_avant, class: "label_checkbox" %>
+    <%= f.check_box :slider, checked_value: true, unchecked_value: false %>
+  </div>
+  <br/>
   <div class="actions">
     <%= f.submit "Valider", class:"waves-effect waves-light btn" %>
   </div>

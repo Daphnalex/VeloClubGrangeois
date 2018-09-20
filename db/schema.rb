@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_18_075336) do
+ActiveRecord::Schema.define(version: 2018_09_20_195313) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2018_09_18_075336) do
     t.string "picture_content_type"
     t.integer "picture_file_size"
     t.datetime "picture_updated_at"
+    t.boolean "slider", default: false
+    t.string "type_of_data", default: "article"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -58,6 +60,13 @@ ActiveRecord::Schema.define(version: 2018_09_18_075336) do
     t.text "description"
     t.datetime "date"
     t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "type_of_data", default: "exit"
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

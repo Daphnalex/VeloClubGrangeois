@@ -1,9 +1,72 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.carousel-slider {
+@import "variables.scss";
+
+.slider {
     height: 400px !important;
+    margin-top: 30px;
 }
-.carousel .carousel-item{
-  visibility: inherit;
+
+.club_note{
+  min-height: 500px;
+  height: 500px;
+  padding: 20px;
+  background-color: #f1f0f1;
+}
+
+.carousel.carousel-slider .carousel-item h2{
+  position: relative;
+  z-index: 200;
+  font: 700 34px/38px Open Sans,sans-serif;
+}
+
+.carousel.carousel-slider{
+  height: 550px !important;
+}
+.carousel.carousel-slider div.home_image{
+  height: 550px;
+  overflow: hidden;
+}
+.carousel.carousel-slider .image_article{
+  transform: translateY(-25%);
+  width: 100%;
+}
+.home_resume{
+  text-align: center;
+  margin-left: 40px;
+  font-style: italic;
+  font-size: 18px !important;
+}
+
+.carousel-item{
+  right: inherit;
+  left: 40px;
+  background-color: $club-bleu;
+}
+
+.stock_image{
+  height: 100%;
+}
+
+.info_type{
+  padding: 10px;
+  background-color: #f1f0f1;
+  width: 120px;
+  margin-left: 40px;
+  margin-top: -50px;
+  color: grey;
+  position: absolute;
+}
+
+.know_more{
+  float: right;
+  left: inherit;
+  margin-right: 20px;
+}
+
+ul.indicators{
+  width: 75%;
+  left: 12.5% !important;
+  margin: inherit !important;
 }
