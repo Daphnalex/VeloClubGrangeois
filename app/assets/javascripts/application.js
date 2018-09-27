@@ -51,6 +51,9 @@
         fullWidth: true,
         indicators: true
       });
+
+      $('.modal').modal();
+      $('.sidenav').sidenav();
   })
 
 

@@ -70,6 +70,11 @@ $secondary-color: color("yellow", "base") !default;
    background-color: $club-bleu !important;
  }
 
+ .no_bg_color > .btn-action.btn-floating.btn-large.waves-effect.waves-light.right{
+   background-color: inherit !important;
+   box-shadow: none !important;
+ }
+
  //NAV & PRESENTATION
 
  nav.navbar {
@@ -78,12 +83,18 @@ $secondary-color: color("yellow", "base") !default;
    margin-top: -20px;
    height: 125px;
    padding-top: 25px;
-   border-bottom: 25px solid $club-jaune;
+   border-bottom: 25px solid $club-bleu;
+   position: fixed;
+   z-index: 500;
  }
 
  nav ul a{
    color: black;
    text-align: center;
+ }
+
+ .sidenav-trigger{
+   color: black;
  }
 
  div.fix-presentation{
@@ -145,6 +156,7 @@ $secondary-color: color("yellow", "base") !default;
 .waves-effect.waves-light.btn{
   background-color: $club-bleu;
   margin: 35px;
+  width: 100%;
 }
 
 .ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all{

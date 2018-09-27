@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :reports, except: :index
   resources :stocks
   resources :contacts, only: [:new, :create]
+  resources :pictures, except: :destroy
 end

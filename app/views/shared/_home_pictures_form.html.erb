@@ -1,0 +1,36 @@
+
+  <div>
+    Images :
+  </div>
+  <br/>
+  <%= @picture.image_one_file_name %><br/>
+  <%= @picture.image_two_file_name %><br/>
+  <%= @picture.image_three_file_name %><br/>
+  <%= @picture.image_four_file_name %><br/>
+  </div>
+<%= form_for @picture do |f| %>
+  <div class="field">
+    <%= f.label :image_1 %><br/>
+    <%= f.file_field :image_one %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label :image_2 %><br/>
+    <br/>
+    <%= f.file_field :image_two %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label :image_3 %><br/>
+    <%= f.file_field :image_three %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label :image_4 %><br/>
+    <%= f.file_field :image_four %>
+  </div>
+  <br/>
+  <div class="actions">
+    <%= f.submit "Valider", class:"waves-effect waves-light btn" %>
+  </div>
+<% end %>

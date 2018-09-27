@@ -1,21 +1,31 @@
 <nav class="navbar">
   <div class="nav-wrapper row">
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="left hide-on-med-and-down col m5">
       <li class="col m1"></li>
-      <li class="col m3"><%= link_to clubs_path do %>LE CLUB<% end %></li>
+      <li class="col m3"><%= link_to clubs_path do %>CLUB<% end %></li>
       <li class="col m3"><%= link_to articles_path do %>ARTICLES<% end %></li>
       <li class="col m3"><%= link_to articles_path do %>ALBUMS<% end %></li>
     </ul>
     <ul class="col m2">
       <%= link_to root_path do %>
-        <%= image_tag "granges" %>
+        <%= image_tag "granges"  %>
       <% end %>
     </ul>
     <ul class="right hide-on-med-and-down col m5">
       <li class="col m1"></li>
       <li class="col m3"><%= link_to exits_path do %>SORTIES<% end %></li>
       <li class="col m3"><%= link_to stocks_path do %>STOCKS<% end %></li>
-      <li class="col m5"><%= link_to new_contact_path do %>CONTACTEZ-NOUS<% end %></li>
+      <li class="col m5"><%= link_to new_contact_path do %>CONTACT<% end %></li>
     </ul>
   </div>
 </nav>
+<ul class="sidenav" id="mobile-demo">
+  <li><%= link_to root_path do %>ACCUEIL<% end %></li>
+  <li><%= link_to clubs_path do %>LE CLUB<% end %></li>
+  <li><%= link_to articles_path do %>ARTICLES<% end %></li>
+  <li><%= link_to articles_path do %>ALBUMS<% end %></li>
+  <li><%= link_to exits_path do %>SORTIES<% end %></li>
+  <li><%= link_to stocks_path do %>STOCKS<% end %></li>
+  <li><%= link_to new_contact_path do %>CONTACTEZ-NOUS<% end %><li>
+</ul>
