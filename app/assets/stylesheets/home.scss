@@ -1,0 +1,38 @@
+.home {
+  margin-top: 76px;
+  z-index: 0;
+}
+
+//carousel
+div.articles_carousel.carousel.carousel-slider.center{
+  max-height: 500px !important;
+  background-color: black;
+}
+
+div.articles_carousel .carousel-title, div.articles_carousel .carousel-resume{
+  position: absolute;
+  width: 100%;
+  z-index: 250;
+}
+
+.articles_carousel.carousel.carousel-slider .carousel-item h2{
+  font-size: 2rem;
+  font-family: 'Open-Sans';
+  text-align: center;
+}
+
+.articles_carousel.carousel.carousel-slider .carousel-item p{
+  margin-top: 250px;
+  font-size: 1rem;
+  font-family: 'Open-Sans';
+  text-align: center;
+}
+
+div.articles_carousel a {
+  color: inherit;
+}
+
+.articles_carousel.carousel.carousel-slider .carousel-item img{
+  opacity: 0.7;
+  z-index: 200;
+}

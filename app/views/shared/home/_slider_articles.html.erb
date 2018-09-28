@@ -1,0 +1,22 @@
+<div class="articles_carousel carousel carousel-slider center">
+  <div class="carousel-fixed-item center">
+    <%= link_to articles_path, class:"btn waves-effect white grey-text darken-text-2" do %>Tous les articles<% end %>
+  </div>
+  <% @news.each do |article| %>
+    <div class="carousel-item white-text" href="#one!">
+      <div class="row carousel-title">
+        <%= link_to "/articles/#{article.id}" do %>
+         <div class="col s12 m12 l12">
+           <h2><%= article.title %></h2>
+         </div>
+        <% end %>
+      </div>
+      <div class="row carousel-resume">
+        <div class="hide-on-small-only col m12 l12">
+          <p class="white-text"><%= article.resume %></p>
+        </div>
+      </div>
+      <img class="image_article" src="<%=article.picture%>" alt="Image de :<%=article.title%>"/>
+    </div>
+  <%end%>
+</div>

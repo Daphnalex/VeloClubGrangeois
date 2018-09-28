@@ -39,6 +39,8 @@ nav{
   background-color: white;
   height: 75px;
   border-bottom: 10px solid $club-bleu;
+  top: 0;
+  z-index: 200;
 }
 
 nav ul.left{
