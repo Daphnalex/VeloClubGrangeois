@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col m12">
-      <%= render "shared/return-btn" , url: clubs_path(), title: "retour à la vie du club"  %>
+      <%= render "shared/global/return-btn" , url: clubs_path(), title: "retour à la vie du club"  %>
     </div>
     <div class="col m11">
       <h1>Modifier le compte-rendu</h1>
     </div>
   </div>
   <div class="row-fluid">
-    <%= render 'shared/add_report_form', type_action: "edit"%>
+    <%= render 'shared/report/add_report_form', type_action: "edit"%>
   </div>
 </div>

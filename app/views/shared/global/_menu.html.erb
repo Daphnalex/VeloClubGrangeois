@@ -1,0 +1,27 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <%= link_to root_path, class:"brand-logo center" do %>
+      <%= image_tag "logo", class:"logo" %>
+    <% end %>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li><%= link_to clubs_path do %>Le club<% end %></li>
+      <li><%= link_to articles_path do %>Les articles<% end %></li>
+      <li><%= link_to exits_path do %>Les sorties<% end %></li>
+    </ul>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><%= link_to root_path do %>L'album<% end %></li>
+      <li><%= link_to stocks_path do %>Les stocks<% end %></li>
+      <li><%= link_to new_contact_path do %>Contact<% end %></li>
+    </ul>
+  </div>
+</nav>
+<ul class="sidenav" id="mobile-demo">
+  <li><%= link_to root_path do %>Accueil<% end %></li>
+  <li><%= link_to clubs_path do %>Le club<% end %></li>
+  <li><%= link_to articles_path do %>Les articles<% end %></li>
+  <li><%= link_to exits_path do %>Les sorties<% end %></li>
+  <li><%= link_to root_path do %>L'album<% end %></li>
+  <li><%= link_to stocks_path do %>Les stocks<% end %></li>
+  <li><%= link_to new_contact_path do %>Contact<% end %></li>
+</ul>

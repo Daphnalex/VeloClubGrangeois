@@ -8,13 +8,14 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
     <% if content_for?(:head) %>
       <%= yield(:head) %>
     <% end %>
   </head>
 
   <body>
+    <%= render "shared/global/menu" %>
     <%= yield %>
   </body>
 </html>

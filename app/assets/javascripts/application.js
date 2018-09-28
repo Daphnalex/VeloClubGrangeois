@@ -53,7 +53,14 @@
       });
 
       $('.modal').modal();
-      $('.sidenav').sidenav();
+      //open sidenav to the right of screen
+      $('.sidenav').sidenav({
+        menuWidth: 300,
+        closeOnClick: true,
+        edge: 'right', // <--- CHECK THIS OUT
+      }
+  );
+  $('.collapsible').collapsible();
   })
 
 

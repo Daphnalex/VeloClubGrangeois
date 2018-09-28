@@ -7,10 +7,10 @@
           <span class="card-title"><%= exit.title %></span>
         </div>
         <div class="col s2 no_bg_color">
-          <%= render "shared/action-btn", url: "/exits/#{exit.id}/edit", variable_data: @exit, title: "Mettre à jour" %>
+          <%= render "shared/global/action-btn", url: "/exits/#{exit.id}/edit", variable_data: @exit, title: "Mettre à jour" %>
         </div>
         <div class="col s2 no_bg_color">
-          <%= render "shared/action-btn", url: "/exits/#{exit.id}", variable_data: @exit, title: "Supprimer" %>
+          <%= render "shared/global/action-btn", url: "/exits/#{exit.id}", variable_data: @exit, title: "Supprimer" %>
         </div>
         <p class="col s12"><%= exit.description %></p>
       </div>
