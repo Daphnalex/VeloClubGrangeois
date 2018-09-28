@@ -1,9 +1,12 @@
+@import "variables.scss";
+
 .home {
   margin-top: 76px;
   z-index: 0;
 }
 
-//carousel
+// carousel---- articles
+
 div.articles_carousel.carousel.carousel-slider.center{
   max-height: 500px !important;
   background-color: black;
@@ -30,9 +33,133 @@ div.articles_carousel .carousel-title, div.articles_carousel .carousel-resume{
 
 div.articles_carousel a {
   color: inherit;
+  background-color: white;
 }
 
 .articles_carousel.carousel.carousel-slider .carousel-item img{
   opacity: 0.7;
   z-index: 200;
+}
+
+//exits of the current month
+
+div.exit-month-image img{
+  width: 100%;
+  padding: 40px 40px 0px 40px;
+}
+
+@media all and (min-width: 993px){
+  div.exit-month-image.small img{
+    visibility: hidden !important;
+    height: 0px !important;
+  }
+}
+
+div.exit-month-table table{
+  margin: 25px;
+}
+
+div.exit-month-table table th{
+  padding-left: 20px;
+  text-transform: uppercase;
+}
+
+div.exit-month-table table td{
+  padding: 20px;
+}
+
+//photo presentation
+div.album{
+  background-color: $club-bleu;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+@media all and (max-width: 790px){
+  div.photos{
+    visibility: hidden;
+    height: 0px;
+  }
+}
+
+@media all and (min-width: 1369px){
+  div.photos{
+    padding: 25px;
+    height: 600px;
+  }
+}
+
+@media all and (min-width: 791px) and (max-width: 1369px){
+  div.photos{
+    padding: 25px;
+    height: 450px;
+  }
+}
+
+div.photos .large{
+  overflow: hidden;
+  padding: 0px;
+}
+
+div.large{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media all and (min-width: 1012px){
+  div.large img{
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 1011px){
+  div.large img{
+    height: 100%;
+  }
+}
+
+div.small{
+  height: 100%;
+  padding: 0px !important;
+}
+
+div.small-image{
+  max-height: 33.33%;
+  overflow: hidden;
+  width: 100%;
+}
+
+div.small-image img{
+  width: 100%;
+}
+
+@media all and (min-width: 791px){
+  div.album_carousel.carousel.carousel-slider.center{
+    visibility: hidden !important;
+    height: 0px !important;
+  }
+}
+
+@media all and (min-width: 1111px){
+  div.album a{
+    width: 100%;
+    text-align: center;
+    color: grey;
+    background-color: white;
+  }
+}
+
+@media all and (max-width: 1110px){
+  div.album a{
+    width: 120%;
+    margin-left: 2%;
+    text-align: center;
+    color: grey;
+    background-color: white;
+  }
+}
+
+div.album a:hover, div.articles_carousel a:hover{
+  background-color: $club-jaune;
 }

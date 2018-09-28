@@ -1,0 +1,18 @@
+@import "variables.scss";
+
+h1{
+  margin: 40px 40px 0px 40px;
+  font-size: 1.4rem;
+  font-family: 'Open-Sans';
+  padding: 10px;
+  border-left: 10px solid $club-bleu;
+}
+
+h1bis{
+  color: white;
+  margin: 40px 40px 0px 40px;
+  font-size: 1.4rem;
+  font-family: 'Open-Sans';
+  padding: 10px;
+  border-left: 10px solid $club-jaune;
+}

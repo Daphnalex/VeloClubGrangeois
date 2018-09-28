@@ -50,7 +50,12 @@
       $('.carousel.carousel-slider').carousel({
         fullWidth: true,
         indicators: true
-      });
+      }, setTimeout(autoplay, 4500));
+
+      function autoplay() {
+        $('.carousel').carousel('next');
+        setTimeout(autoplay, 4500);
+      }
 
       $('.modal').modal();
       //open sidenav to the right of screen
