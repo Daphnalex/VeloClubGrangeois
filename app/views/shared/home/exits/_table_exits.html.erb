@@ -1,0 +1,18 @@
+<table class="striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Lieu</th>
+      <th class="hide-on-small-only"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exits_month.each do |exit| %>
+      <tr>
+        <td><%= exit.date.strftime('%d/%m/%Y') %></td>
+        <td><%= exit.city %></td>
+        <td class="hide-on-small-only"><%= exit.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

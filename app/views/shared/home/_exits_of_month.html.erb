@@ -9,67 +9,9 @@
 </div>
 <div class="row">
   <div class="exit-month-table col s11 m11 l6">
-    <table class="striped">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Lieu</th>
-          <th class="hide-on-small-only"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @exits_month.each do |exit| %>
-          <tr>
-            <td><%= exit.date.strftime('%d/%m/%Y') %></td>
-            <td><%= exit.city %></td>
-            <td class="hide-on-small-only"><%= exit.description %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <%= render "shared/home/exits/table_exits" %>
   </div>
   <div class="exit-month-image hide-on-med-and-down col l6">
     <%= image_tag "road-sport-pxhere" %>
-  </div>
-</div>
-<div class="row album">
-  <div class="row">
-    <h1bis>Les photos du moment</h1bis>
-  </div>
-  <div class="row photos hide-on-small-only">
-    <div class="col m9 l9 large">
-      <img src="<%= @picture.image_one %>" alt="Image album : <%= @picture.image_one %>" />
-    </div>
-    <div class="col m3 l3 small">
-      <div class="small-image">
-        <img src="<%= @picture.image_two %>" alt="Image album : <%= @picture.image_two %>" />
-      </div>
-      <div class="small-image">
-        <img src="<%= @picture.image_three %>" alt="Image album : <%= @picture.image_three %>" />
-      </div>
-      <div class="small-image">
-        <img src="<%= @picture.image_four %>" alt="Image album : <%= @picture.image_four %>" />
-      </div>
-    </div>
-  </div>
-  <div class="album_carousel carousel carousel-slider center">
-    <div class="carousel-item white-text" href="#one!">
-      <img class="image_album" src="<%=@picture.image_one%>" alt="Image album :<%=@picture.image_one%>"/>
-    </div>
-    <div class="carousel-item white-text" href="#two!">
-      <img class="image_album" src="<%=@picture.image_two%>" alt="Image album :<%=@picture.image_two%>"/>
-    </div>
-    <div class="carousel-item white-text" href="#three!">
-      <img class="image_album" src="<%=@picture.image_three%>" alt="Image album :<%=@picture.image_three%>"/>
-    </div>
-    <div class="carousel-item white-text" href="#four!">
-      <img class="image_album" src="<%=@picture.image_four%>" alt="Image album :<%=@picture.image_four%>"/>
-    </div>
-  </div>
-  <div class="row button-album">
-    <div class="col s3 m4 l5"></div>
-    <div class="col s6 m4 l2">
-      <%= link_to root_path, class:"waves-effect waves-light btn" do %>Voir les photos<% end %>
-    </div>
   </div>
 </div>

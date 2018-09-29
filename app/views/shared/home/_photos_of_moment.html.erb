@@ -1,0 +1,13 @@
+<div class="row album">
+  <div class="row">
+    <h1bis>Les photos du moment</h1bis>
+  </div>
+  <%= render "shared/home/photo_of_moment/albums_large_version" %>
+  <%= render "shared/home/photo_of_moment/albums_small_version" %>
+  <div class="row button-album">
+    <div class="col s3 m4 l5"></div>
+    <div class="col s6 m4 l2">
+      <%= link_to root_path, class:"waves-effect waves-light btn" do %>Voir les photos<% end %>
+    </div>
+  </div>
+</div>

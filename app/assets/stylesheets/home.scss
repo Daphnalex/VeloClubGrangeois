@@ -163,3 +163,28 @@ div.small-image img{
 div.album a:hover, div.articles_carousel a:hover{
   background-color: $club-jaune;
 }
+
+div.album div.large:hover, div.album div.small-image:hover{
+  border:3px solid white;
+  cursor: pointer;
+}
+
+div.modal.open{
+  height: 80% !important;
+  width: 90% !important;
+}
+
+div.modal{
+  max-height: 90% !important;
+  display:block;
+	float:left;
+  margin-right:auto;
+	margin-left:auto;
+  padding-top: 2%;
+	text-align:center;
+	overflow:hidden;
+}
+
+div.modal.open img.image_modal{
+  height: 90%;
+}
