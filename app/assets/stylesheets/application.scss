@@ -30,6 +30,10 @@ $secondary-color: color("yellow", "base") !default;
    font-size: 18px;
  }
 
+ .page-content {
+   margin-top: 76px;
+   z-index: 0;
+ }
 
 
 //navbar
@@ -80,13 +84,13 @@ nav li a{
   text-align: center;
 }
 
-@media all and (min-width: 1150px){
+@media all and (min-width: 1161px){
   nav li a{
     font-size: 20px;
   }
 }
 
-@media all and (max-width: 1149px){
+@media all and (max-width: 1160px){
   nav li a{
     font-size: 16px;
   }
@@ -100,4 +104,32 @@ nav .sidenav-trigger{
 
 nav .sidenav-trigger i{
   color: black;
+}
+
+.nav-wrapper i.material-icons{
+  background-color: inherit;
+}
+
+//checkbox formulaire
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked{
+  opacity: 1;
+  pointer-events: auto;
+  margin-top: 9px;
+  margin-left: 10px;
+}
+
+//material-icon
+
+i.material-icons{
+  background-color: $club-bleu;
+}
+
+div.actions > i.waves-effect.waves-light.btn.waves-input-wrapper{
+  background-color: $club-bleu;
+  cursor: pointer;
+}
+
+div.actions > i.waves-effect.waves-light.btn.waves-input-wrapper input{
+  color: white;
+  cursor: pointer;
 }

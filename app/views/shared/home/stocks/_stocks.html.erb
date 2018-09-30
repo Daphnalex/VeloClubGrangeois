@@ -1,0 +1,54 @@
+<div class="row">
+  <h1>Les vêtements du club</h1>
+</div>
+<% if @stocks.size % 2 == 0 %>
+  <div class="row">
+    <% @stocks.each do |stock| %>
+      <div class="hide-on-small-only col m12 l6 stock-home">
+        <div class="col m6 l6 parent-clothes">
+          <img class="clothes first-child" src="<%=stock.front_image%>" alt="<%=stock.title%> : photo de devant"/>
+          <img class="clothes second-child" src="<%=stock.back_image%>" alt="<%=stock.title%> : photo de dos"/>
+        </div>
+        <div class="col m6 l6 clothes-text">
+          <div class="row">
+            <h5><%= stock.title %></h5>
+          </div>
+          <div class="row-fluid">
+            <%= stock.promotion %>
+          </div>
+        </div>
+      </div>
+      <div class="hide-on-med-and-up stock-home row">
+        <div class="row">
+          <h5><%= stock.title %></h5>
+        </div>
+        <div class="row center-pictures">
+          <img class="clothes-small first-child" src="<%=stock.front_image%>" alt="<%=stock.title%> : photo de devant"/>
+          <img class="clothes-small second-child" src="<%=stock.back_image%>" alt="<%=stock.title%> : photo de dos"/>
+        </div>
+        <div class="row">
+          <%= stock.promotion %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <% @stocks.each do |stock| %>
+    <div class="row stock-home">
+      <div class="col s0 m0 l2"></div>
+      <div class="col s12 m6 l3 parent-clothes">
+        <img class="clothes first-child" src="<%=stock.front_image%>" alt="<%=stock.title%> : photo de devant"/>
+        <img class="clothes second-child" src="<%=stock.back_image%>" alt="<%=stock.title%> : photo de dos"/>
+      </div>
+      <div class="col s0 m0 l1"></div>
+      <div class="col s12 m6 l4">
+        <div class="row">
+          <h5><%= stock.title %></h5>
+        </div>
+        <div class="row-fluid">
+          <%= stock.promotion %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

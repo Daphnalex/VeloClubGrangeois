@@ -89,6 +89,21 @@
         edge: 'right', // <--- CHECK THIS OUT
       });
     $('.collapsible').collapsible();
+
+    //hide image stock in home when hover it
+    $('.parent-clothes').mouseenter(function(){
+      $(this).children('.first-child').css('display','none');
+      $(this).children('.second-child').css('display','block');
+    });
+
+    $('.parent-clothes').mouseleave(function(){
+      $('.first-child').css('display','block');
+      $(this).children('.second-child').css('display','none');
+    });
+
+    //size of stock-home is egal to height of picture
+    $('div.stock-home:has(img.clothes)').css("height", $('img.clothes').height());
+    
   });
 
 
