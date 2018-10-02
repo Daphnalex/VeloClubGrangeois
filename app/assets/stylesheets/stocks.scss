@@ -35,3 +35,37 @@ h4{
   margin-left: 10px;
   font-size: 16px;
 }
+
+div.promotion{
+  padding: 20px;
+}
+
+.stock-images{
+  position: relative;
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.stock-front{
+  height: 100%;
+  width: 100%;
+	overflow:hidden;
+}
+
+.stock-back{
+  height: 100%;
+  width: 100%;
+  overflow:hidden;
+}
+
+.stock-front img, .stock-back img{
+  height: 75%;
+  margin-right:auto;
+	margin-left:auto;
+	text-align:center;
+}
+
+.card .card-image img{
+  width: auto !important;
+}

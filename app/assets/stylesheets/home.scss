@@ -44,6 +44,12 @@ div.exit-month-image img{
 }
 
 @media all and (min-width: 993px){
+  div.show-on-medium-and-down{
+    display: none;
+  }
+}
+
+@media all and (min-width: 993px){
   div.exit-month-image.small img{
     visibility: hidden !important;
     height: 0px !important;
@@ -62,6 +68,8 @@ div.exit-month-table table th{
 div.exit-month-table table td{
   padding: 20px;
 }
+
+
 
 //photo presentation
 div.album{
@@ -137,6 +145,19 @@ div.small-image img{
   width: 100%;
 }
 
+@media all and (max-width: 791px){
+  div.carousel-item{
+    overflow: hidden !important;
+  }
+}
+
+@media all and (max-width: 791px){
+  div.album_carousel.carousel.carousel-slider.center img{
+    height: 100% !important;
+    width: auto;
+  }
+}
+
 @media all and (min-width: 791px){
   div.album_carousel.carousel.carousel-slider.center{
     visibility: hidden !important;
@@ -156,7 +177,6 @@ div.small-image img{
 @media all and (max-width: 1110px){
   div.album a{
     width: 120%;
-    //margin-left: 2%;
     text-align: center;
     color: grey;
     background-color: white;
@@ -179,7 +199,6 @@ div.modal.open{
 
 div.modal{
   max-height: 90% !important;
-  display:block;
 	float:left;
   margin-right:auto;
 	margin-left:auto;
@@ -204,54 +223,60 @@ div.album i{
 }
 
 //stocks promotion
-.parent-clothes{
-  position: relative;
-  padding: 20px;
-  height: 100%;
-  width: 100%;
-}
-
-img.clothes{
-  position: absolute;
-  max-height: 400px;
-  max-width: 100%;
-  padding: 25px;
-}
-
-img.clothes-small{
-  max-height: 200px;
-  max-width: 100%;
-}
-
-.clear{
-  clear: both;
-}
-
-img.clothes.first-child{
-  z-index:2;
-}
-
-img.clothes.second-child{
-  z-index: 1;
-  display: none;
-}
-
-.bloc-clothes-small{
-  padding: 25px;
-}
-
-div.stock-home.hide-on-small-only{
-  padding-left: 25px;
-  padding-right: 25px;
-  margin-bottom: 40px;
-}
-
-div.center-pictures{
+.cell-content-stock {
   float:left;
-	height: 100%;
-	width: 100%;
-	margin-right:auto;
+  width: 100%;
+  margin-right:auto;
 	margin-left:auto;
 	text-align:center;
 	overflow:hidden;
+  background-color: #f1f0f1;
+}
+
+.cell-content-stock:hover{
+  cursor: pointer;
+}
+
+.title-stock{
+  position: relative;
+  z-index: 100;
+  background-color: $club-jaune;
+  padding: 15px;
+  color: black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cell-content-stock img{
+  position: relative;
+  z-index: 5;
+  margin-top: 2%;
+  //width: 70%;
+  height: 70%;
+}
+
+.calque-stock{
+  background-color: $club-bleu;
+  opacity: 0.9;
+  z-index: 200;
+  position: absolute;
+  display: none;
+  width: 100%;
+  margin-right:auto;
+	margin-left:auto;
+	text-align:center;
+	overflow:hidden;
+}
+
+.title-calque-stock{
+  position: absolute;
+  z-index: 250;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: center;
+  width: 100%;
+  margin-top: 47%;
+  font-weight: bold;
+  font-size: 22px;
 }

@@ -25,11 +25,13 @@ div.media-article{
   margin-left: auto;
   margin-right: auto;
   display: block;
+  background-color: black;
 }
 
 div.media-article>img{
   width: 100%;
-    transform: translateY(-25%);
+  transform: translateY(-25%);
+  opacity: 0.8;
 }
 
 .title-article{

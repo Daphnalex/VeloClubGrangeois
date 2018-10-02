@@ -1,15 +1,31 @@
 // Place all the styles related to the Exits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables.scss';
+
 .icon{
   color: white;
 }
 .card-action{
-  color: white;
+  background-color: $club-jaune !important;
+  color: black;
 }
 .info-title{
   text-align: left;
 }
 .info{
   text-align: center;
+}
+
+.no_bg_color a.btn-action.btn-floating.btn-large.waves-effect.waves-light.right{
+  background-color: inherit !important;
+  box-shadow: none !important;
+}
+
+.no_bg_color a.btn-action.btn-floating.btn-large.waves-effect.waves-light.right i.material-icons{
+  background-color: inherit !important;
+}
+
+.card.blue-club{
+  background-color: $club-bleu;
 }

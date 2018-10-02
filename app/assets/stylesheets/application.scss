@@ -42,7 +42,7 @@ nav{
   position: fixed;
   background-color: white;
   height: 75px;
-  border-bottom: 10px solid $club-bleu;
+  border-bottom: 10px solid $club-jaune;
   top: 0;
   z-index: 200;
 }
@@ -124,6 +124,10 @@ i.material-icons{
   background-color: $club-bleu;
 }
 
+.waves-effect.waves-light.btn{
+  background-color: $club-bleu;
+}
+
 div.actions > i.waves-effect.waves-light.btn.waves-input-wrapper{
   background-color: $club-bleu;
   cursor: pointer;
@@ -132,4 +136,12 @@ div.actions > i.waves-effect.waves-light.btn.waves-input-wrapper{
 div.actions > i.waves-effect.waves-light.btn.waves-input-wrapper input{
   color: white;
   cursor: pointer;
+}
+
+.pagination i.material-icons{
+  background-color: inherit;
+}
+
+.pagination li.active a{
+  background-color: $club-bleu;
 }

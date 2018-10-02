@@ -12,21 +12,30 @@
       <% @stocks.each do |stock| %>
         <div class="col s12 m6 l6">
           <div class="card">
-            <div class=" row-fluid col m12 card-image">
-              <div class="col m12">
+            <div class="row-fluid">
+              <div class="col s12 m12 l12">
                 <h4><%=stock.title%></h4>
               </div>
-              <div class="col m6">
-                <h5>Devant</h5>
-                <img src="<%=stock.front_image%>" alt="<%=stock.title%> : photo de devant"/>
-              </div>
-              <div class="col m6">
-                <h5>Derrière</h5>
-                <img src="<%=stock.back_image%>" alt="<%=stock.title%> : photo de dos"/>
-              </div>
             </div>
-            <div class=" row card-content">
+            <div class=" row-fluid col m12 card-image">
+              <div class="col s1 m1 l2"></div>
+              <div class="col s10 m10 l8 stock-images">
+                <div class="col s12 m12 l12 stock-front">
+                  <h5>Devant</h5>
+                  <img src="<%=stock.front_image%>" alt="<%=stock.title%> : photo de devant"/>
+                </div>
+                <div class="col s12 m12 l12 stock-back">
+                  <h5>Derrière</h5>
+                  <img src="<%=stock.back_image%>" alt="<%=stock.title%> : photo de dos"/>
+                </div>
+              </div>
+              <div class="col s1 m1 l2"></div>
+            </div>
+            <div class=" row-fluid card-content">
               <b><%=stock.quantity%></b> vêtements en stock
+            </div>
+            <div class="row-fluid promotion">
+              <%= stock.promotion %>
             </div>
             <div class="row-fluid info_update">
               Mise à jour le <%=stock.date.strftime("%d/%m/%Y, %H:%M:%S")%>

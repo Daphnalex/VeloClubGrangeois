@@ -103,7 +103,32 @@
 
     //size of stock-home is egal to height of picture
     $('div.stock-home:has(img.clothes)').css("height", $('img.clothes').height());
-    
+    $('.cell-content-stock').css("height", $('.cell-content-stock').width());
+    $('.calque-stock').css({
+      "height": $('.cell-content-stock').height(),
+      "width": $('.cell-content-stock').width()
+    });
+
+    $('div.cell-stock').mouseenter(function(){
+      console.log('survol');
+      $(this).find('.calque-stock').css({
+        'display':'block',
+        'width': $(this).find('.cell-content-stock').width()
+        });
+    });
+    $('div.cell-stock').mouseleave(function(){
+      console.log('survol');
+      $(this).find('.calque-stock').css('display','none');
+    });
+
+    $('.stock-images').mouseenter(function(){
+      $(this).find('.stock-front').css("display","none");
+    });
+
+    $('.stock-images').mouseleave(function(){
+      $(this).find('.stock-front').css("display","block");
+    });
+
   });
 
 
