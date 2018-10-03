@@ -71,3 +71,4 @@ gem 'kaminari'
 gem 'mail_form'
 gem 'sendgrid-ruby'
 gem "jquery-slick-rails"
+gem 'carrierwave'

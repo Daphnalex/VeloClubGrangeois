@@ -1,4 +1,4 @@
-
+@import 'variables.scss';
 
 h3{
   font-size: 34px !important;
@@ -13,8 +13,10 @@ h3>a{
 }
 
 .article{
-  border: 1px solid rgba(0, 0, 0, 0.54);
+  background-color: $club-bleu;
+  border: 10px solid $club-bleu;
   border-radius: 2px;
+  margin-bottom: 25px;
 }
 
 div.media-article{
@@ -45,6 +47,7 @@ div.media-article>img{
 
 .resume-article{
   margin: 20px;
+  color: white;
 }
 
 .information-article{

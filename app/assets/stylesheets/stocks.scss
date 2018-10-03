@@ -3,12 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables.scss";
 
-.stock-card > div.card-action > a{
-  color: $club-bleu !important;
+.stock-card .card{
+  height: 700px;
+}
+
+.stock-card .card .card-action a{
+  color: white !important;
+}
+
+.stock-card div.card-action{
+  background-color: $club-bleu !important;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .stock-card > div.card-content{
   text-align: right;
+  margin-bottom: 25px;
 }
 
 .stock-card > span.card-title{
@@ -38,6 +50,13 @@ h4{
 
 div.promotion{
   padding: 20px;
+  height: 150px;
+  overflow-y: scroll;
+  margin-bottom: 15px;
+}
+
+.cell-stock{
+  margin-bottom: 25px;
 }
 
 .stock-images{

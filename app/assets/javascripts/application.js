@@ -51,22 +51,7 @@
       $('.articles_carousel.carousel.carousel-slider').carousel({
         fullWidth: true,
         indicators: true
-      }, setTimeout(autoplayArticles, 4500));
-
-      function autoplayArticles() {
-        $('.articles_carousel.carousel').carousel('next');
-        setTimeout(autoplayArticles, 4500);
-      }
-
-      $('.album_carousel.carousel.carousel-slider').carousel({
-        fullWidth: true,
-        indicators: true
-      }, setTimeout(autoplayAlbum, 4500));
-
-      function autoplayAlbum() {
-        $('.album_carousel.carousel').carousel('next');
-        setTimeout(autoplayAlbum, 4500);
-      }
+      });
 
       $('.modal').modal();
 
@@ -83,12 +68,34 @@
       };
 
       //open sidenav to the right of screen
-      $('.sidenav').sidenav({
-        menuWidth: 300,
-        closeOnClick: true,
-        edge: 'right', // <--- CHECK THIS OUT
+      // $('.sidenav').sidenav({
+      //   menuWidth: 300,
+      //   closeOnClick: true,
+      //   edge: 'right',
+      //   onCloseEnd: true
+      // });
+      var elem = document.querySelector('.sidenav');
+      var instance = M.Sidenav.init(elem, {
+        onCloseEnd: function () {
+            console.log('I close');
+          },
+          onCloseStart: function(){
+            console.log('close start');
+          },
+          onOpenEnd: function(){
+            console.log('open end');
+          },
+          onOpenStart: function(){
+            console.log('open start');
+          }
       });
-    $('.collapsible').collapsible();
+
+      $('ul.sidenav a').click(function(){
+         console.log('clic');
+         instance.destroy();
+      })
+
+    //$('.collapsible').collapsible();
 
     //hide image stock in home when hover it
     $('.parent-clothes').mouseenter(function(){

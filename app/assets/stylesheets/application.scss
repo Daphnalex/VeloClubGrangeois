@@ -35,6 +35,15 @@ $secondary-color: color("yellow", "base") !default;
    z-index: 0;
  }
 
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
 
 //navbar
 
@@ -80,13 +89,12 @@ nav li{
 
 nav li a{
   color: #000;
-  font-size: 20px;
   text-align: center;
 }
 
 @media all and (min-width: 1161px){
   nav li a{
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -124,6 +132,12 @@ i.material-icons{
   background-color: $club-bleu;
 }
 
+//footer
+.page-footer{
+  background-color: #1b7dab;
+}
+
+//bouton
 .waves-effect.waves-light.btn{
   background-color: $club-bleu;
 }
@@ -138,6 +152,8 @@ div.actions > i.waves-effect.waves-light.btn.waves-input-wrapper input{
   cursor: pointer;
 }
 
+
+//pagination
 .pagination i.material-icons{
   background-color: inherit;
 }

@@ -5,14 +5,15 @@
       <%= image_tag "logo", class:"logo" %>
     <% end %>
     <ul id="nav-mobile" class="left hide-on-med-and-down">
-      <li><%= link_to clubs_path do %>Le club<% end %></li>
-      <li><%= link_to articles_path do %>Les articles<% end %></li>
-      <li><%= link_to exits_path do %>Les sorties<% end %></li>
+      <li style='width: 25%;'><%= link_to clubs_path do %>Club<% end %></li>
+      <li style='width: 25%;'><%= link_to articles_path do %>Articles<% end %></li>
+      <li style='width: 25%;'><%= link_to exits_path do %>Sorties<% end %></li>
+      <li style='width: 25%;'><%= link_to root_path do %>Albums<% end %></li>
     </ul>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><%= link_to root_path do %>L'album<% end %></li>
-      <li><%= link_to stocks_path do %>Les stocks<% end %></li>
-      <li><%= link_to new_contact_path do %>Contact<% end %></li>
+      <li style='width: 30%;'><%= link_to stocks_path do %>Stocks<% end %></li>
+      <li style='width: 30%;'><%= link_to new_contact_path do %>Contact<% end %></li>
+      <li style='width: 40%;'><%= link_to root_path do %>Se connecter<% end %></li>
     </ul>
   </div>
 </nav>
