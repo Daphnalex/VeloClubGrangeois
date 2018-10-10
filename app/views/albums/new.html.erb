@@ -1,5 +1,14 @@
-<h1>New Album</h1>
-
-<%= render 'form', album: @album %>
-
-<%= link_to 'Back', albums_path %>
+<div class="container-fluid page-content">
+  <div class="row">
+    <div class="col s0 m1 l1"></div>
+    <div class="col s11 m10 l10">
+      <%= render "shared/global/return-btn", url: "/albums", title: "Retour aux albums" %>
+      <div class="row">
+        <h1>Nouvel album</h1>
+      </div>
+      <div class="row">
+        <%= render 'form', album: @album %>
+      </div>
+    </div>
+  </div>
+</div>
