@@ -1,0 +1,30 @@
+<div class="container page-content">
+  <div class="row">
+    <div class="col s11 m11 l11">
+      <h1>Albums photo</h1>
+    </div>
+    <div class="col s1 m1 l1">
+      <%= render "shared/global/action-btn" , url: 'albums/new', title:'Ajouter'  %>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <% @albums.each do |album| %>
+        <%= link_to album do %>
+          <div class="col s0 m1 l1"></div>
+          <div class="col s12 m5 l3">
+            <div class="row title_album"><%= album.title %></div>
+            <div class="row image_album">
+              <div class="row see_album">
+                Voir l'album
+              </div>
+              <img src='<%= album.album_attachments[1].picture_url %>' alt="album <%=album.title%>" />
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

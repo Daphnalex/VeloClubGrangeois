@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Album Attachments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Album</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @album_attachments.each do |album_attachment| %>
+      <tr>
+        <td><%= album_attachment.album_id %></td>
+        <td><%= album_attachment.picture %></td>
+        <td><%= link_to 'Show', album_attachment %></td>
+        <td><%= link_to 'Edit', edit_album_attachment_path(album_attachment) %></td>
+        <td><%= link_to 'Destroy', album_attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Album Attachment', new_album_attachment_path %>

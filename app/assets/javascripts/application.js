@@ -19,7 +19,7 @@
 //= require turbolinks
 //= require materialize
 //= require materialize-sprockets
-//= require jquery.slick
+//= require owl.carousel
 //= require_tree .
 
 
@@ -42,19 +42,40 @@
       });
 
       $(".error").show().delay(3000).fadeOut();
-      // $('.slider').slick({
-      //   slidesToShow: 4,
-      //   slidesToScroll: 4,
-      //   dots: true
-      // });
-
-      $('.articles_carousel.carousel.carousel-slider').carousel({
-        fullWidth: true,
-        indicators: true
-      });
 
       $('.modal').modal();
 
+
+      $('.carousel').carousel({
+        'fullWidth': true,
+        'indicators': true
+      });
+      var albumInterval = setInterval(function(){
+        $('.carousel.show_album').carousel('next');
+      }, 8000);
+      var articlesInterval = setInterval(function(){
+        $('.carousel.articles_carousel').carousel('next');
+      }, 5000);
+
+      $('nav a').click(function(){
+        clearInterval(albumInterval);
+        albumInterval = null;
+        clearInterval(articlesInterval);
+        articlesInterval = null;
+        $('.modal').modal('destroy');
+      });
+
+      $('.image-gallery').mouseenter(function(){
+        $(this).css({
+          'border': '2px solid white'
+        })
+      });
+
+      $('.image-gallery').mouseleave(function(){
+        $(this).css({
+          'border': 'inherit'
+        })
+      });
 
       $('.current-image').click(function(){
         console.log('current', $(this).attr('src'));
@@ -66,6 +87,16 @@
         console.log("dans la fonction pour ajouter la source", source);
         $('#image_modal_album_presentation').attr('src', source);
       };
+
+      $('.current-image-album').click(function(){
+        console.log('current album', $(this).attr('src'));
+        getCurrentImageAlbum($(this).attr('src'));
+      })
+
+      function getCurrentImageAlbum(source){
+        console.log('dans la fn pour + la source', source);
+        $('#image_modal').attr('src',source);
+      }
 
       //open sidenav to the right of screen
       // $('.sidenav').sidenav({
@@ -134,6 +165,40 @@
 
     $('.stock-images').mouseleave(function(){
       $(this).find('.stock-front').css("display","block");
+    });
+
+    $(".owl-carousel").owlCarousel({
+      nav: true
+    });
+
+    $('.image_album').mouseenter(function(){
+      $(this).find('img').css({
+        'opacity': 0.5
+      });
+      $(this).find('.see_album').css({
+        'position': 'absolute',
+        'margin-top': $(this).height()/2 -13,
+        'width':  $(this).find('img').width() + 'px',
+        'display': 'block',
+        'margin-left': '0px',
+        'text-align': 'center'
+      },
+      console.log('hauteur', $(this).find('img').width()))
+    });
+
+    $('.image_album').mouseleave(function(){
+
+      $(this).find('img').css({
+        'opacity': 1
+      });
+
+      $(this).find('.see_album').css({
+        'position': 'inherit',
+        'margin-top': 'inherit',
+        'width':  'inherit',
+        'display': 'none'
+      });
+
     });
 
   });

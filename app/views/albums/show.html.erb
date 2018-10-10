@@ -1,0 +1,51 @@
+<div class="container-fluid page-content">
+  <div class="row">
+    <div class="col s0 m1 l1"></div>
+    <div class="col s11 m10 l10">
+      <div class="row">
+        <%= render "shared/global/return-btn", url: "/albums", title: "Retour aux albums" %>
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <h1><%= @album.title %></h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <div class="carousel carousel-slider show_album center">
+              <% @album.album_attachments.each do |attachment| %>
+                 <a class="carousel-item" href="#<%= attachment.id %>">
+                   <img src="<%= attachment.picture %>">
+                 </a>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row all_images">
+    <div class="col s12 m12 l12">
+      <h1bis>Toutes les images</h1bis>
+    </div>
+    <div class="row col s12 m12 l12">
+      <div class="col s12 m8 l10"></div>
+      <div class="col s0 m4 l2 download_album_button">
+        <%= button_to "Télécharger l'album", download_album_path(@album.id) %>
+      </div>
+    </div>
+    <br/><br/><br/>
+    <div class="col s12 m12 l12">
+      <% @album.album_attachments.each do |attachment| %>
+        <div class="col s12 m6 l4 image-gallery">
+          <a class="modal-trigger" href="#modal2">
+            <img src='<%= attachment.picture %>' class="current-image-album"/>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!-- Modal Structure -->
+<div id="modal2" class="modal">
+  <img id="image_modal" class="image_modal"/>
+</div>

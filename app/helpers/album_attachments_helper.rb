@@ -1,0 +1,2 @@
+module AlbumAttachmentsHelper
+end

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Album:</strong>
+  <%= @album_attachment.album_id %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @album_attachment.picture %>
+</p>
+
+<%= link_to 'Edit', edit_album_attachment_path(@album_attachment) %> |
+<%= link_to 'Back', album_attachments_path %>
