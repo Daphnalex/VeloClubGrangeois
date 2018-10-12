@@ -120,7 +120,7 @@ nav .sidenav-trigger i{
 }
 
 //checkbox formulaire
-[type="checkbox"]:not(:checked), [type="checkbox"]:checked{
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked,[type="radio"]:not(:checked), [type="radio"]:checked{
   opacity: 1;
   pointer-events: auto;
   margin-top: 9px;

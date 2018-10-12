@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_03_200623) do
+ActiveRecord::Schema.define(version: 2018_10_11_082504) do
 
   create_table "album_attachments", force: :cascade do |t|
     t.integer "album_id"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2018_10_03_200623) do
     t.string "mail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar"
   end
 
   create_table "exits", force: :cascade do |t|

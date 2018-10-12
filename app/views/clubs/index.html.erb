@@ -1,54 +1,89 @@
-<div class="container-fluid page-content">
+<div class="container page-content">
   <div class="row">
-    <div class="col m7 member-club">
-      <div class="col m10">
-        <h1>Membres du bureau</h1>
-      </div>
-      <div class="col m2">
-        <%= render "shared/global/action-btn" , url: 'clubs/new', title:'Ajouter'  %>
-      </div>
-      <div class="row">
-        <table class="club_table striped">
-            <tbody>
-              <% @clubs.each do |club|%>
-              <tr>
-                <td width="20%" class="center"><%=club.title%></td>
-                <td width="20%" class="center"><%=club.name%></td>
-                <td width="25%" class="center"><%= num_to_phone(club.phone) %></td>
-                <td width="31%"><%=club.mail%></td>
-                <td width="2%" class="table-btn"><div><%= render 'shared/global/action-btn', url: edit_club_path(club.id), title: 'Mettre à jour'%></div></td>
-                <td width="2%" class="table-btn"><div><%= render "shared/global/action-btn", url: "/clubs/#{club.id}",variable_data: @club, title: "Supprimer" %></div></td>
-              </tr>
-              <%end%>
-            </tbody>
-        </table>
-      </div>
+    <div class="col m10">
+      <h1>Membres du bureau</h1>
     </div>
-    <div class="col m5 life-club">
-      <div class="row">
-        <div class="col m10">
-          <h1>La vie du club</h1>
-        </div>
-        <div class="col m2">
-          <%= render "shared/global/action-btn" , url: 'reports/new', title:'Ajouter'  %>
-        </div>
-      </div>
-      <div class="row content">
-        <% @reports.each do |report| %>
-          <div class="row report">
-            <div class="col m9 report-title"><%= report.title%></div>
-            <div class="col m1 report-document">
-              <%= render "shared/global/action-btn", url: report.document.url, title: "Télécharger"%>
+    <div class="col m2">
+      <%= render "shared/global/action-btn" , url: 'clubs/new', title:'Ajouter'  %>
+    </div>
+  </div>
+  <div class="row">
+    <% @clubs.each do |club|%>
+      <div class="col member-club">
+        <div class='row icon'>
+          <div class="col s12 m12 l12">
+            <div class="col s6 m8 l8"></div>
+            <div class="col s3 m2 l2">
+              <%= render 'shared/global/action-btn', url: edit_club_path(club.id), title: 'Mettre à jour'%>
             </div>
-            <div class="col m1 report-update">
-              <%= render 'shared/global/action-btn', url: edit_report_path(report.id), title: 'Mettre à jour'%>
-            </div>
-            <div class="col m1 report-delete">
-              <%= render "shared/global/action-btn", url: "/reports/#{report.id}",variable_data: @report, title: "Supprimer" %>
+            <div class="col s3 m2 l2">
+              <%= render "shared/global/action-btn", url: "/clubs/#{club.id}",variable_data: @club, title: "Supprimer" %>
             </div>
           </div>
-
-        <%end%>
+        </div>
+        <div class="row title">
+          <%=club.title%>
+        </div>
+        <div class="row avatar">
+          <%= image_tag "avatars/#{club.avatar}" %>
+        </div>
+        <div class="row name">
+          <%=club.name%>
+        </div>
+        <div class="row info">
+          <% if club.phone %>
+            <%= num_to_phone(club.phone) %>
+          <% end %>
+        </div>
+        <div class="row info">
+          <%=club.mail%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row life-club">
+    <div class="row">
+      <div class="col m10">
+        <h1>La vie du club</h1>
+      </div>
+      <div class="col m2">
+        <%= render "shared/global/action-btn" , url: 'reports/new', title:'Ajouter'  %>
+      </div>
+    </div>
+    <br/>
+    <div class="row content">
+      <table class="club_table striped">
+        <tbody>
+          <% @reports.each do |report| %>
+            <tr>
+              <td width="96%">
+                <div class="report-title">
+                  <%=report.title%>
+                </div>
+              </td>
+              <td width="2%" class="center">
+                <div class="report-document">
+                  <%= render "shared/global/action-btn", url: report.document.url, title: "Télécharger"%>
+                </div>
+              </td>
+              <td width="2%" class="center">
+                <div class="report-update">
+                  <%= render 'shared/global/action-btn', url: edit_report_path(report.id), title: 'Mettre à jour'%>
+                </div>
+              </td>
+              <td width="2%">
+                <div class="report-delete">
+                  <%= render "shared/global/action-btn", url: "/reports/#{report.id}",variable_data: @report, title: "Supprimer" %>
+                </div>
+              </td>
+            </tr>
+          <%end%>
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <div class="col m12">
+        <%= paginate @reports, theme: ''%>
       </div>
     </div>
   </div>

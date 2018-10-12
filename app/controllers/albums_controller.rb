@@ -31,24 +31,6 @@ class AlbumsController < ApplicationController
 
 
 
-    # @album_id = params[:album_id]
-    # @time_filename = Time.now.strftime("%Y%m%d%H%M%S").to_s << ".zip"
-    # tmp_filename = "#{Rails.root}/tmp/"+ @time_filename
-    # @pictures = Album.find(@album_id).album_attachments.all;
-    # puts('album',@album.inspect)
-    # Zip::File.open(tmp_filename, Zip::File::CREATE) do |zip|
-    #   @pictures.each do |picture|
-    #     puts('picture')
-    #     puts(picture.picture)
-    #     @item = picture.picture
-    #     file = "#{Rails.root}/public/albums/#{@picture_id}/#{@item}"
-    #     zip.add(tmp_filename,file)
-    #   end
-    # end
-    # zip_data = File.read(tmp_filename)
-    # send_data(zip_data, :type => 'application/zip', :filename => tmp_filename)
-
-
   # GET /albums
   # GET /albums.json
   def index

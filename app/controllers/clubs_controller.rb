@@ -2,15 +2,25 @@ class ClubsController < ApplicationController
 
   def index
     @clubs = Club.all
-    @reports = Report.order('document_updated_at DESC')
+    @reports = Report.order('document_updated_at DESC').page(params[:page]).per(10)
   end
 
   def new
     @club = Club.new
+    dir = "#{Rails.root}/app/assets/images/avatars"
+    files = Dir[File.join(dir, '**', '*')]
+    @files = files.map{|file| file.split('/').last}
+    puts @files
   end
 
   def create
     @club = Club.new(club_params)
+    dir = "#{Rails.root}/app/assets/images/avatars"
+    files = Dir[File.join(dir, '**', '*')]
+    @files = files.map{|file| file.split('/').last}
+    avatar = params[:club][:avatar]
+    avatar = avatar.split("\"")
+    @club.avatar = avatar[1]
     if @club.valid?
       @club.save
       redirect_to clubs_path
@@ -30,10 +40,17 @@ class ClubsController < ApplicationController
 
   def edit
     @club = Club.find(params[:id])
+    dir = "#{Rails.root}/app/assets/images/avatars"
+    files = Dir[File.join(dir, '**', '*')]
+    @files = files.map{|file| file.split('/').last}
+    puts @files
   end
 
   def update
     @club = Club.find(params[:id])
+    avatar = params[:club][:avatar]
+    avatar = avatar.split("\"")
+    @club.avatar = avatar[1]
     if @club.update_attributes(club_params)
       redirect_to clubs_path
     else
@@ -58,7 +75,7 @@ class ClubsController < ApplicationController
 
   private
     def club_params
-      params.require(:club).permit(:title, :name, :phone, :mail)
+      params.require(:club).permit(:title, :name, :avatar)
     end
 
 end

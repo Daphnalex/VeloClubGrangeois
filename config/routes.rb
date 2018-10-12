@@ -18,4 +18,5 @@ Rails.application.routes.draw do
       post 'download'
     end
   end
+  resources :mentions, only: [:index]
 end

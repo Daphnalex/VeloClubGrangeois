@@ -21,10 +21,6 @@
   font-size: 14px;
 }
 
-.club_table {
-  font-size: 15px;
-}
-
 .club_table td{
   padding: 0px;
 }
@@ -48,14 +44,6 @@
 
 td.table-btn{
   padding: 0px;
-}
-
-.life-club{
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-  border: 1px solid #f0f1f0;
-  height: 500px;
-  background-color: #f1f0f1;
 }
 
 .life-club .content .btn-action{
@@ -84,10 +72,15 @@ td.table-btn{
 .report-title{
   height: 56px;
   padding-top:10px !important;
+  padding-left: 20px;
 }
 
 .report-document{
   height: 35px !important;
+}
+
+.club_table i{
+  background-color: inherit !important;
 }
 
 .row.report{
@@ -97,4 +90,79 @@ td.table-btn{
 
 hr{
   border: 0.3px solid $club-bleu;
+}
+
+.inline{
+  display: inline-block;
+}
+
+.member-club .avatar img{
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.member-club .avatar{
+  padding: 20px;
+}
+
+.member-club{
+  background-color: #f1f0f1;
+  text-align: center;
+  padding: 15px !important;
+  margin: 15px;
+}
+
+@media all and (min-width: 1300px){
+  .member-club{
+    width: 30%;
+  }
+}
+
+@media all and (min-width: 550px) and (max-width: 1299px){
+  .member-club{
+    width: 40%;
+  }
+}
+
+@media all and (max-width: 549px){
+  .member-club{
+    width: 80%;
+  }
+}
+
+.member-club .title{
+  text-transform: uppercase;
+  margin-top: 50px;
+}
+
+.member-club .name{
+  font-weight: bold;
+}
+
+.member-club .info{
+  font-size: 16px;
+}
+
+.member-club i{
+  background-color: inherit !important;
+  color: $club-bleu !important;
+  line-height: 40px !important;
+  text-align: right;
+}
+
+.member-club .row.icon div{
+  height: 0px;
+}
+
+.member-club .waves-effect.waves-light.btn,.member-club .waves-effect.waves-light.btn-large,.member-club .waves-effect.waves-light.btn-small{
+  background-color: inherit !important;
+  box-shadow: none !important;
+  margin: 0px !important;
+}
+
+.field.checkbox.avatar img{
+  width: 128px;
+  height: 128px;
 }

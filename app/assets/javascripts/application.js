@@ -229,6 +229,9 @@ function verif_nombre(champ){
 }
 
 function transform_phone(number){
-  var phone = number.slice(0,2)+'-'+number.slice(2,4)+'-'+number.slice(4,6)+'-'+number.slice(6,8)+'-'+number.slice(8,10);
-  return phone;
+  console.log(number)
+  // if (number != 'nil'){
+  //   var phone = number.slice(0,2)+'-'+number.slice(2,4)+'-'+number.slice(4,6)+'-'+number.slice(6,8)+'-'+number.slice(8,10);
+  //   return phone;
+  // }
 }

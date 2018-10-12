@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'variables.scss';
 
+.album_page{
+  min-height: 500px;
+}
+
 .image_album img{
   width: 100%;
 }

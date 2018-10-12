@@ -3,6 +3,15 @@
     <%= f.label :intitulé_du_poste %>
     <%= f.text_field :title, placeholder: 'Le boss' %>
   </div>
+  <div class="field checkbox avatar">
+    <%= f.label :choisir_son_avatar, class: "label_checkbox" %>
+    <% @files.each do |file| %>
+      <div class="inline">
+        <%= f.radio_button :avatar, :checked => file %>
+        <%= image_tag "avatars/#{file}" %>
+      </div>
+    <% end %>
+  </div>
   <div class="error"><%= @error_title %></div>
   <div class="field">
     <%= f.label :nom_complet %>

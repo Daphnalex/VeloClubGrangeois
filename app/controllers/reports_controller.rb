@@ -7,18 +7,21 @@ class ReportsController < ApplicationController
   def create
     @report = Report.new(report_params)
     @report.document = params[:report][:document]
-
+    binding.pry
     if @report.valid?
+      binding.pry
       @report.save
       redirect_to clubs_path
     else
-
       if @report.errors.to_hash(:title)
+        binding.pry
         @error_report_title = "Un titre est requis"
       end
       if @report.errors.to_hash(:document)
+        binding.pry
         @error_report_file = "Votre fichier présente un problème"
       end
+      binding.pry
       render :new
     end
   end
