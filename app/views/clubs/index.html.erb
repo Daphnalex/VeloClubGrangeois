@@ -1,6 +1,15 @@
 <div class="container page-content">
   <div class="row">
     <div class="col m10">
+      <h1>Présentation</h1>
+    </div>
+    <div class="col m2">
+      <%= render "shared/global/action-btn" , url: 'presentations/1/edit', title:'Mettre à jour'  %>
+    </div>
+  </div>
+  <div class="row presentation_club"><%= @presentations[0].content.html_safe %></div>
+  <div class="row">
+    <div class="col m10">
       <h1>Membres du bureau</h1>
     </div>
     <div class="col m2">

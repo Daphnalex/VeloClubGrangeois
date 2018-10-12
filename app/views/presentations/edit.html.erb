@@ -1,0 +1,22 @@
+<div class="container page-content">
+  <div class="row">
+    <div class="col m12">
+      <%= render "shared/global/return-btn" , url: clubs_path(), title: "retour à la vie du club"  %>
+    </div>
+    <div class="col m11">
+      <h1>Modifier la description du club</h1>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <%= form_for @presentation, html: {multipart: false} do |f| %>
+       <div class="field">
+         <%= f.label :contenu_de_la_présentation %><br>
+         <%= f.cktext_area :content %>
+       </div>
+       <br/>
+       <div class="actions">
+         <%= f.submit "Modifier la présentation", class:"waves-effect waves-light btn" %>
+       </div>
+    <% end %>
+  </div>
+</div>

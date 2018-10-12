@@ -3,6 +3,7 @@ class ClubsController < ApplicationController
   def index
     @clubs = Club.all
     @reports = Report.order('document_updated_at DESC').page(params[:page]).per(10)
+    @presentations = Presentation.all
   end
 
   def new
