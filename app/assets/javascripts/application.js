@@ -45,6 +45,7 @@
 
       $('.modal').modal();
 
+      $(".dropdown-trigger").dropdown();
 
       $('.carousel').carousel({
         'fullWidth': true,
@@ -200,6 +201,36 @@
       });
 
     });
+
+    if ($('p.alert').text() == ""){
+      console.log('pas de message');
+      $('p.alert').css({
+        'display': 'none',
+        'margin-top': '0px'
+      });
+    } else {
+      console.log('message', $('p.alert').text());
+      $('.page-content').css({
+        'margin-top': '40px'
+      });
+      $("p.alert").fadeIn().delay(2000).fadeOut(2000);
+    };
+
+    if ($('p.notice').text() == ""){
+      console.log('pas de message');
+      $('p.notice').css({
+        'display': 'none',
+        'margin-top': '0px'
+      });
+    } else {
+      console.log('message', $('p.alert').text());
+      $('.page-content').css({
+        'margin-top': '40px'
+      });
+      $("p.notice").fadeIn().delay(2000).fadeOut(2000);
+    };
+
+
 
   });
 

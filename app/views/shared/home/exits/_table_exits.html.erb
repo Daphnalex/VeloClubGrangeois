@@ -11,7 +11,7 @@
       <tr>
         <td><%= exit.date.strftime('%d/%m/%Y') %></td>
         <td><%= exit.city %></td>
-        <td class="hide-on-small-only"><%= exit.description %></td>
+        <td class="hide-on-small-only"><%= exit.description.html_safe %></td>
       </tr>
     <% end %>
   </tbody>

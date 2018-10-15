@@ -3,9 +3,11 @@
     <div class="col s11 m11 l11">
       <h1>Stocks de vêtements</h1>
     </div>
-    <div class="col s1 m1 l1">
-      <%= render "shared/global/action-btn" , url: 'stocks/new', title:'Ajouter'  %>
-    </div>
+    <% if current_user && current_user.rights == "admin" %>
+      <div class="col s1 m1 l1">
+        <%= render "shared/global/action-btn" , url: 'stocks/new', title:'Ajouter'  %>
+      </div>
+    <% end %>
   </div>
   <div class="row-fluid">
     <div class="row stock-card">
@@ -40,10 +42,12 @@
             <div class="row-fluid info_update">
               Mise à jour le <%=stock.date.strftime("%d/%m/%Y, %H:%M:%S")%>
             </div>
-            <div class="card-action">
-              <%= link_to edit_stock_path(stock.id) do%>Mettre à jour<%end%>
-              <%= link_to stock_path(stock.id), method: :delete do%>Supprimer<%end%>
-            </div>
+            <% if current_user && current_user.rights == "admin" %>
+              <div class="card-action">
+                <%= link_to edit_stock_path(stock.id) do%>Mettre à jour<%end%>
+                <%= link_to stock_path(stock.id), method: :delete do%>Supprimer<%end%>
+              </div>
+            <% end %>
           </div>
         </div>
       <%end%>

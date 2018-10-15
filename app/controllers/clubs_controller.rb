@@ -1,5 +1,6 @@
 class ClubsController < ApplicationController
-
+  before_action :must_be_admin, only: [:new, :create, :edit, :update, :destroy]
+  
   def index
     @clubs = Club.all
     @reports = Report.order('document_updated_at DESC').page(params[:page]).per(10)
@@ -79,4 +80,9 @@ class ClubsController < ApplicationController
       params.require(:club).permit(:title, :name, :avatar)
     end
 
+    def must_be_admin
+      unless current_user && current_user.rights == "admin"
+        redirect_to clubs_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
+      end
+    end
 end

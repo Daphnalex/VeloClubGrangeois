@@ -32,8 +32,8 @@ $secondary-color: color("yellow", "base") !default;
  }
 
  .page-content {
-   margin-top: 76px;
    z-index: 0;
+   margin-top: 78px !important;
  }
 
  body {
@@ -161,4 +161,17 @@ div.actions > i.waves-effect.waves-light.btn.waves-input-wrapper input{
 
 .pagination li.active a{
   background-color: $club-bleu;
+}
+
+//alert
+p.alert, p.notice{
+  position: absolute;
+  z-index: 300;
+  display: none;
+  background-color: $club-bleu;
+  padding: 25px 20px 25px 20px;
+  color: white;
+  margin-top: 80px;
+  width: 100%;
+  opacity: 0.8;
 }

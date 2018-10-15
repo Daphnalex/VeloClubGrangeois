@@ -6,12 +6,16 @@
         <div class="col s8 m10 l10">
           <span class="card-title"><%= exit.title %></span>
         </div>
-        <div class="col s2 m1 l1 no_bg_color">
-          <%= render "shared/global/action-btn", url: "/exits/#{exit.id}/edit", variable_data: @exit, title: "Mettre à jour" %>
-        </div>
-        <div class="col s2 m1 l1 no_bg_color">
-          <%= render "shared/global/action-btn", url: "/exits/#{exit.id}", variable_data: @exit, title: "Supprimer" %>
-        </div>
+        <% if current_user && current_user.rights == "admin" %>
+          <div class="col s2 m1 l1 no_bg_color">
+            <%= render "shared/global/action-btn", url: "/exits/#{exit.id}/edit", variable_data: @exit, title: "Mettre à jour" %>
+          </div>
+        <% end %>
+        <% if current_user && current_user.rights == "admin" %>
+          <div class="col s2 m1 l1 no_bg_color">
+            <%= render "shared/global/action-btn", url: "/exits/#{exit.id}", variable_data: @exit, title: "Supprimer" %>
+          </div>
+        <% end %>
         <p class="col s12 m12 l12"><%= exit.description.html_safe %></p>
       </div>
     </div>

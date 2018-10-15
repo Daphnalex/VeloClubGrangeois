@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :album_attachments
-  resources :galleries
   devise_for :users
+  resources :accounts
+  resources :album_attachments
+  resources :galleries, as: :authenticated_root
   mount Ckeditor::Engine => '/ckeditor'
 
   root 'home#index'
@@ -13,9 +14,11 @@ Rails.application.routes.draw do
   resources :stocks
   resources :contacts, only: [:new, :create]
   resources :pictures, except: :destroy
-  resources :albums do
-    member do
-      post 'download'
+  authenticated :user do
+    resources :albums do
+      member do
+        post 'download'
+      end
     end
   end
   resources :mentions, only: [:index]

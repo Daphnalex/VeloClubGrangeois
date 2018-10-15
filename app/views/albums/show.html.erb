@@ -8,9 +8,11 @@
           <div class="col s10 m10 l11">
             <h1><%= @album.title %></h1>
           </div>
-          <div class="col s2 m2 l1">
-            <%= render "shared/global/action-btn", url: "/albums/#{@album.id}",variable_data: @album, title: "Supprimer" %>
-          </div>
+          <% if current_user && current_user.rights == "admin" %>
+            <div class="col s2 m2 l1">
+              <%= render "shared/global/action-btn", url: "/albums/#{@album.id}",variable_data: @album, title: "Supprimer" %>
+            </div>
+          <% end %>
         </div>
         <div class="row">
           <div class="col s12 m12 l12">

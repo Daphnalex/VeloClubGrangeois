@@ -1,4 +1,6 @@
 class ExitsController < ApplicationController
+  before_action :must_be_admin, only: [:new, :create, :edit, :update, :destroy]
+  
   def index
     @exits = Exit.order('date ASC').page(params[:page]).per(7)
   end
@@ -45,5 +47,11 @@ class ExitsController < ApplicationController
 
   def exit_params
     params.require(:exit).permit(:title, :description, :date, :city, :slider)
+  end
+
+  def must_be_admin
+    unless current_user && current_user.rights == "admin"
+      redirect_to exits_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
+    end
   end
 end

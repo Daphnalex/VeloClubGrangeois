@@ -3,9 +3,11 @@
     <div class="col s11 m11 l11">
       <h1>Albums photo</h1>
     </div>
-    <div class="col s1 m1 l1">
-      <%= render "shared/global/action-btn" , url: 'albums/new', title:'Ajouter'  %>
-    </div>
+    <% if current_user && current_user.rights == "admin" %>
+      <div class="col s1 m1 l1">
+        <%= render "shared/global/action-btn" , url: 'albums/new', title:'Ajouter'  %>
+      </div>
+    <% end %>
   </div>
   <br/>
   <div class="row">

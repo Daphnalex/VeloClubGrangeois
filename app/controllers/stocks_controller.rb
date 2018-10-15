@@ -1,5 +1,6 @@
 class StocksController < ApplicationController
-
+  before_action :must_be_admin, only: [:new, :create, :edit, :update, :destroy]
+  
   def index
     @stocks = Stock.all
   end
@@ -50,13 +51,19 @@ class StocksController < ApplicationController
     @stock = Stock.find(params[:id])
     if @stock.destroy
       flash[:success] = "Vêtement supprimé du stock"
-      redirect_to stocks_path()
+      redirect_to stocks_path
     end
   end
 
   private
     def stock_params
       params.require(:stock).permit(:title, :front_image, :back_image, :quantity, :promotion, :home)
+    end
+
+    def must_be_admin
+      unless current_user && current_user.rights == "admin"
+        redirect_to stocks_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
+      end
     end
 
 end

@@ -3,7 +3,7 @@ class AlbumsController < ApplicationController
   require 'zip'
 
   before_action :set_album, only: [:show, :edit, :update, :destroy]
-
+  before_action :must_be_admin, only: [:new, :create, :edit, :update, :destroy]
 
 # action method, stream the zip
 
@@ -102,10 +102,14 @@ class AlbumsController < ApplicationController
       @album = Album.find(params[:id])
     end
 
-
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
       params.require(:album).permit(:title, album_attachments_attributes: [:id, :album_id, :picture])
+    end
+
+    def must_be_admin
+      unless current_user && current_user.rights == "admin"
+        redirect_to albums_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
+      end
     end
 end

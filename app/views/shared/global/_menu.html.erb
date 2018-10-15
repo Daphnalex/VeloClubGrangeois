@@ -5,24 +5,57 @@
       <%= image_tag "logo", class:"logo" %>
     <% end %>
     <ul id="nav-mobile" class="left hide-on-med-and-down">
-      <li style='width: 25%;'><%= link_to clubs_path do %>Club<% end %></li>
-      <li style='width: 25%;'><%= link_to articles_path do %>Articles<% end %></li>
-      <li style='width: 25%;'><%= link_to exits_path do %>Sorties<% end %></li>
-      <li style='width: 25%;'><%= link_to albums_path do %>Albums<% end %></li>
+
+      <% if user_signed_in? %>
+        <li style='width: 25%;'><%= link_to clubs_path do %>Club<% end %></li>
+        <li style='width: 25%;'><%= link_to articles_path do %>Articles<% end %></li>
+        <li style='width: 25%;'><%= link_to exits_path do %>Sorties<% end %></li>
+        <li style='width: 25%;'><%= link_to albums_path do %>Albums<% end %></li>
+      <% else %>
+        <li style='width: 30%;'><%= link_to clubs_path do %>Club<% end %></li>
+        <li style='width: 30%;'><%= link_to articles_path do %>Articles<% end %></li>
+        <li style='width: 30%;'><%= link_to exits_path do %>Sorties<% end %></li>
+      <% end %>
     </ul>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li style='width: 30%;'><%= link_to stocks_path do %>Stocks<% end %></li>
       <li style='width: 30%;'><%= link_to new_contact_path do %>Contact<% end %></li>
-      <li style='width: 40%;'><%= link_to root_path do %>Se connecter<% end %></li>
+      <% if current_user && current_user.rights == "admin" %>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Admin<i class="material-icons right">arrow_drop_down</i></a></li>
+      <% elsif current_user && current_user.rights == "member"%>
+        <li style='width: 40%;'><%= link_to destroy_user_session_path, method: :delete do %>Se déconnecter<% end %></li>
+      <% else %>
+        <li style='width: 40%;'><%= link_to new_user_session_path do %>Se connecter<% end %></li>
+      <% end %>
     </ul>
   </div>
 </nav>
+
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">Gestion des utilisateurs</a></li>
+  <li class="divider"></li>
+  <li><%= link_to accounts_path do %>Gestion des utilisateurs<% end %></li>
+  <li><%= link_to destroy_user_session_path, method: :delete do %>Se déconnecter<% end %></li>
+</ul>
+
 <ul class="sidenav" id="mobile-demo">
   <li><%= link_to root_path do %>Accueil<% end %></li>
   <li><%= link_to clubs_path do %>Le club<% end %></li>
   <li><%= link_to articles_path do %>Les articles<% end %></li>
   <li><%= link_to exits_path do %>Les sorties<% end %></li>
+  <% if user_signed_in? %>
   <li><%= link_to albums_path do %>L'album<% end %></li>
+  <% end %>
   <li><%= link_to stocks_path do %>Les stocks<% end %></li>
   <li><%= link_to new_contact_path do %>Contact<% end %></li>
+  <li class="divider"></li>
+  <% if user_signed_in? && current_user.rights == "admin" %>
+    <li><a href="#!">Gestion des utilisateurs</a></li>
+  <% end %>
+  <% if user_signed_in? %>
+    <li><%= link_to destroy_user_session_path, method: :delete do %>Se déconnecter<% end %></li>
+  <% else %>
+    <li><%= link_to new_user_session_path do %>Se connecter<% end %></li>
+  <% end %>
 </ul>

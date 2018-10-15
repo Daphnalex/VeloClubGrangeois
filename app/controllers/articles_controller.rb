@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :must_be_admin, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @articles = Article.order("created_at DESC").page(params[:page]).per(5)
   end
@@ -47,5 +49,11 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :picture, :resume, :content, :slider)
+  end
+
+  def must_be_admin
+    unless current_user && current_user.rights == "admin"
+      redirect_to articles_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
+    end
   end
 end
