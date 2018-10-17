@@ -1,0 +1,19 @@
+<div class="container page-content">
+  <div class="row">
+    <div class="col s11 m11 l11">
+      <h1>Liste des membres autorisés</h1>
+    </div>
+    <div class="col s1 m1 l1">
+      <%= render "shared/global/action-btn" , url: 'users/new', title:'Ajouter'  %>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <p class="italic">
+      Pour qu'un membre puisse se connecter sur le site merci d'ajouter son adresse email à la liste des membres autorisés.
+    </p>
+  </div>
+  <div class="row">
+    <%= render "shared/user/list_accounts" %>
+  </div>
+</div>

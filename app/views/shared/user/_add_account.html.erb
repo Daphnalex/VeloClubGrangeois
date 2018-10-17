@@ -1,0 +1,24 @@
+<%= form_for @user, url: user_invitation_path do |f| %>
+  <div class="field">
+    <%= f.label :prénom %>
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :nom %>
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :adresse_mail %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :droits %>
+    <div class="inline">
+      <%= f.check_box :rights, :checked => "admin" %>
+      <div class="rights_elements">Administrateur</div>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit "Ajouter l'email du membre", class:"waves-effect waves-light btn" %>
+  </div>
+<% end %>

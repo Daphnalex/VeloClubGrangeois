@@ -1,0 +1,20 @@
+<div class="container-fluid page-content">
+  <div class="row">
+    <div class="col s0 m1 l1"></div>
+    <div class="col s11 m10 l10">
+      <%= render "shared/global/return-btn", url: "/accounts", title: "Retour à la liste des membres autorisés" %>
+      <div class="row">
+        <h1>Inviter un nouveau membre</h1>
+      </div>
+      <div class="row">
+        <p class="italic">
+          Ajouter l'adresse email de chacun des membres du club ainsi que leurs droits d'accès (Administrateur ou Membre) pour leur permettre de se connecter et voir les contenus restreints aux membres du club.<br/>
+          Attention les administrateurs ont des droits de modification sur tout le contenu du site. Ils doivent donc être restreints aux seules personnes amenées à mettre à jour le contenu du site.
+        </p>
+      </div>
+      <div class="row">
+        <%= render "shared/user/add_account" %>
+      </div>
+    </div>
+  </div>
+</div>

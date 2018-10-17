@@ -1,0 +1,32 @@
+<table class="striped">
+  <thead>
+    <th width='15%'>Nom</th>
+    <th width='15%'>Prénom</th>
+    <th width='30%'>Adresse mail</th>
+    <th width='30%'>Droits utilisateurs</th>
+    <th width='2%'></th>
+    <th width='2%'></th>
+  </thead>
+  <tbody>
+
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.lastname %></td>
+        <td><%= user.firstname %></td>
+        <td><%= user.email %></td>
+        <td><%= user.rights %></td>
+        <td><%=  %></td>
+        <td>
+          <div class="user-update">
+            <%= render 'shared/global/action-btn', url: edit_user_path(user.id), title: 'Mettre à jour'%>
+          </div>
+        </td>
+        <td>
+          <div class="user-delete">
+            <%= render "shared/global/action-btn", url: "/users/#{user.id}",variable_data: @user, title: "Supprimer" %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
