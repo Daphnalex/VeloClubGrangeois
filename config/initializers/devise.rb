@@ -8,7 +8,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '731046fc6f1a6697c99eeb154424c6ede9d61f2f264a482daa0da79ff14f9244d615f1c8f9e97bbe1b2aee4b7e6af50ff27254626dceff1d5e862d0d285cd9f7'
+  # config.secret_key = '677daa820e471638c4cbb4b38cffc44ee73875953544bfef8dac5c83e2d72e07e60201f26ef9756f412f3a2d1601ed305f3c67be0de7e98116c8fb5f58f452e7'
   
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -114,7 +114,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '2986ddacc3cba4ced4a54b4f5b8a82b0fd544d2182ec17f3b007996e1ac54fc60b075149795dc2567da84d6de63bde9aab168bc3f905ac096f90a4ca094d899e'
+  # config.pepper = '70018d725ee16d2b4077726cebb27ccce8d51d1d9c102c8bbf897bf967395753094191025e05e8f693b6903daabb2e5287be2ea5b65777e68d9a2227dead80f1'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -124,27 +124,27 @@ Devise.setup do |config|
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
-  # confirming their account. For instance, if set to 2.days, the user will be
-  # able to access the website for two days without confirming their account,
+  # confirming their user. For instance, if set to 2.days, the user will be
+  # able to access the website for two days without confirming their user,
   # access will be blocked just in the third day. Default is 0.days, meaning
-  # the user cannot access the website without confirming their account.
+  # the user cannot access the website without confirming their user.
   # config.allow_unconfirmed_access_for = 2.days
 
-  # A period that the user is allowed to confirm their account before their
+  # A period that the user is allowed to confirm their user before their
   # token becomes invalid. For example, if set to 3.days, the user can confirm
-  # their account within 3 days after the mail was sent, but on the fourth day
-  # their account can't be confirmed with the token any more.
+  # their user within 3 days after the mail was sent, but on the fourth day
+  # their user can't be confirmed with the token any more.
   # Default is nil, meaning there is no restriction on how long a user can take
-  # before confirming their account.
+  # before confirming their user.
   # config.confirm_within = 3.days
 
   # If true, requires any email changes to be confirmed (exactly the same way as
-  # initial account confirmation) to be applied. Requires additional unconfirmed_email
+  # initial user confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
   config.reconfirmable = true
 
-  # Defines which key will be used when confirming an account
+  # Defines which key will be used when confirming an user
   # config.confirmation_keys = [:email]
 
   # ==> Configuration for :rememberable
@@ -176,34 +176,34 @@ Devise.setup do |config|
   # config.timeout_in = 30.minutes
 
   # ==> Configuration for :lockable
-  # Defines which strategy will be used to lock an account.
-  # :failed_attempts = Locks an account after a number of failed attempts to sign in.
+  # Defines which strategy will be used to lock an user.
+  # :failed_attempts = Locks an user after a number of failed attempts to sign in.
   # :none            = No lock strategy. You should handle locking by yourself.
   # config.lock_strategy = :failed_attempts
 
-  # Defines which key will be used when locking and unlocking an account
+  # Defines which key will be used when locking and unlocking an user
   # config.unlock_keys = [:email]
 
-  # Defines which strategy will be used to unlock an account.
+  # Defines which strategy will be used to unlock an user.
   # :email = Sends an unlock link to the user email
   # :time  = Re-enables login after a certain amount of time (see :unlock_in below)
   # :both  = Enables both strategies
   # :none  = No unlock strategy. You should handle unlocking by yourself.
   # config.unlock_strategy = :both
 
-  # Number of authentication tries before locking an account if lock_strategy
+  # Number of authentication tries before locking an user if lock_strategy
   # is failed attempts.
   # config.maximum_attempts = 20
 
-  # Time interval to unlock the account if :time is enabled as unlock_strategy.
+  # Time interval to unlock the user if :time is enabled as unlock_strategy.
   # config.unlock_in = 1.hour
 
-  # Warn on the last attempt before the account is locked.
+  # Warn on the last attempt before the user is locked.
   # config.last_attempt_warning = true
 
   # ==> Configuration for :recoverable
   #
-  # Defines which key will be used when recovering the password for an account
+  # Defines which key will be used when recovering the password for an user
   # config.reset_password_keys = [:email]
 
   # Time interval you can reset your password with a reset password key.
@@ -269,7 +269,7 @@ Devise.setup do |config|
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
-  # is mountable, there are some extra configurations to be taken into account.
+  # is mountable, there are some extra configurations to be taken into user.
   # The following options are available, assuming the engine is mounted as:
   #
   #     mount MyEngine, at: '/my_engine'

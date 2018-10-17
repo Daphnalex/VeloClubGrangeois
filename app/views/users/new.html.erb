@@ -1,0 +1,18 @@
+<div class="container page-content album_page">
+  <div class="row">
+    <div class="col s11 m11 l11">
+      <h1>Nouveau membre</h1>
+    </div>
+    <% if current_user && current_user.admin == true %>
+      <div class="col s1 m1 l1">
+        <%= render "shared/global/action-btn" , url: 'users/new', title:'Ajouter'  %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <p>Ajouter un nouveau membre pour l'autoriser à accéder aux contenus restreints.</p>
+  </div>
+  <div class="row">
+    <%= render "shared/user/add_user" %>
+  </div>
+</div>

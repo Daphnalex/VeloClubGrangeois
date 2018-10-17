@@ -3,7 +3,7 @@
     <div class="col m10">
       <h1>Sorties à venir</h1>
     </div>
-    <% if current_user && current_user.rights == "admin" %>
+    <% if current_user && current_user.admin == true %>
       <div class="col m2">
         <%= render "shared/global/action-btn" , url: 'exits/new', title:'Ajouter'  %>
       </div>

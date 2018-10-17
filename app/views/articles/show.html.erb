@@ -7,12 +7,12 @@
         <div class="col m10">
           <%= render "shared/global/return-btn", url: "/articles", title: "Retour aux articles" %>
         </div>
-        <% if current_user && current_user.rights == "admin" %>
+        <% if current_user && current_user.admin == true %>
           <div class="col m1">
             <%= render "shared/global/action-btn", url: edit_article_path(@article), title: "Mettre à jour" %>
           </div>
         <% end %>
-        <% if current_user && current_user.rights == "admin" %>
+        <% if current_user && current_user.admin == true %>
         <div class="col m1">
           <%= render "shared/global/action-btn", url: "/articles/#{@article.id}",variable_data: @article, title: "Supprimer" %>
         </div>

@@ -20,9 +20,9 @@
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li style='width: 30%;'><%= link_to stocks_path do %>Stocks<% end %></li>
       <li style='width: 30%;'><%= link_to new_contact_path do %>Contact<% end %></li>
-      <% if current_user && current_user.rights == "admin" %>
+      <% if current_user && current_user.admin == true %>
         <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Admin<i class="material-icons right">arrow_drop_down</i></a></li>
-      <% elsif current_user && current_user.rights == "member"%>
+      <% elsif current_user && current_user.admin == false%>
         <li style='width: 40%;'><%= link_to destroy_user_session_path, method: :delete do %>Se déconnecter<% end %></li>
       <% else %>
         <li style='width: 40%;'><%= link_to new_user_session_path do %>Se connecter<% end %></li>
@@ -33,9 +33,8 @@
 
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">Gestion des utilisateurs</a></li>
   <li class="divider"></li>
-  <li><%= link_to accounts_path do %>Gestion des utilisateurs<% end %></li>
+  <li><%= link_to users_path do %>Gestion des utilisateurs<% end %></li>
   <li><%= link_to destroy_user_session_path, method: :delete do %>Se déconnecter<% end %></li>
 </ul>
 
@@ -50,7 +49,7 @@
   <li><%= link_to stocks_path do %>Les stocks<% end %></li>
   <li><%= link_to new_contact_path do %>Contact<% end %></li>
   <li class="divider"></li>
-  <% if user_signed_in? && current_user.rights == "admin" %>
+  <% if user_signed_in? && current_user.admin == true %>
     <li><a href="#!">Gestion des utilisateurs</a></li>
   <% end %>
   <% if user_signed_in? %>

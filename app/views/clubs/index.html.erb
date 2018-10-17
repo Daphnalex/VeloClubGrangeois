@@ -3,7 +3,7 @@
     <div class="col m10">
       <h1>Présentation</h1>
     </div>
-    <% if current_user && current_user.rights == "admin" %>
+    <% if current_user && current_user.admin == true %>
       <div class="col m2">
         <%= render "shared/global/action-btn" , url: 'presentations/1/edit', title:'Mettre à jour'  %>
       </div>
@@ -14,7 +14,7 @@
     <div class="col m10">
       <h1>Membres du bureau</h1>
     </div>
-    <% if current_user && current_user.rights == "admin" %>
+    <% if current_user && current_user.admin == true %>
       <div class="col m2">
         <%= render "shared/global/action-btn" , url: 'clubs/new', title:'Ajouter'  %>
       </div>
@@ -26,12 +26,12 @@
         <div class='row icon'>
           <div class="col s12 m12 l12">
             <div class="col s6 m8 l8"></div>
-            <% if current_user && current_user.rights == "admin" %>
+            <% if current_user && current_user.admin == true %>
               <div class="col s3 m2 l2">
                 <%= render 'shared/global/action-btn', url: edit_club_path(club.id), title: 'Mettre à jour'%>
               </div>
             <% end %>
-            <% if current_user && current_user.rights == "admin" %>
+            <% if current_user && current_user.admin == true %>
               <div class="col s3 m2 l2">
                 <%= render "shared/global/action-btn", url: "/clubs/#{club.id}",variable_data: @club, title: "Supprimer" %>
               </div>
@@ -63,7 +63,7 @@
       <div class="col m10">
         <h1>La vie du club</h1>
       </div>
-      <% if current_user && current_user.rights == "admin" %>
+      <% if current_user && current_user.admin == true %>
         <div class="col m2">
           <%= render "shared/global/action-btn" , url: 'reports/new', title:'Ajouter'  %>
         </div>
@@ -86,14 +86,14 @@
                 </div>
               </td>
               <td width="2%" class="center">
-                <% if current_user && current_user.rights == "admin" %>
+                <% if current_user && current_user.admin == true %>
                   <div class="report-update">
                     <%= render 'shared/global/action-btn', url: edit_report_path(report.id), title: 'Mettre à jour'%>
                   </div>
                 <% end %>
               </td>
               <td width="2%">
-                <% if current_user && current_user.rights == "admin" %>
+                <% if current_user && current_user.admin == true %>
                   <div class="report-delete">
                     <%= render "shared/global/action-btn", url: "/reports/#{report.id}",variable_data: @report, title: "Supprimer" %>
                   </div>

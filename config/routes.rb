@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :accounts
+  resources :users, except: [:create] 
   resources :album_attachments
   resources :galleries, as: :authenticated_root
   mount Ckeditor::Engine => '/ckeditor'

@@ -34,7 +34,7 @@ class PicturesController < ApplicationController
     end
 
     def must_be_admin
-      unless current_user && current_user.rights == "admin"
+      unless current_user && current_user.admin == true
         redirect_to root_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
       end
     end

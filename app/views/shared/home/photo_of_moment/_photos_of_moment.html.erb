@@ -1,7 +1,7 @@
 <div class="row album">
   <div class="row">
     <h1bis>Les photos du moment</h1bis>
-    <% if current_user && current_user.rights == "admin" %>
+    <% if current_user && current_user.admin == true %>
       <%= render "shared/global/action-btn" , url: 'pictures/1/edit', title:'Mettre à jour'  %>
     <% end %>
   </div>

@@ -6,12 +6,12 @@
         <div class="col s8 m10 l10">
           <span class="card-title"><%= exit.title %></span>
         </div>
-        <% if current_user && current_user.rights == "admin" %>
+        <% if current_user && current_user.admin == true %>
           <div class="col s2 m1 l1 no_bg_color">
             <%= render "shared/global/action-btn", url: "/exits/#{exit.id}/edit", variable_data: @exit, title: "Mettre à jour" %>
           </div>
         <% end %>
-        <% if current_user && current_user.rights == "admin" %>
+        <% if current_user && current_user.admin == true %>
           <div class="col s2 m1 l1 no_bg_color">
             <%= render "shared/global/action-btn", url: "/exits/#{exit.id}", variable_data: @exit, title: "Supprimer" %>
           </div>

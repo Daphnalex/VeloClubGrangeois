@@ -1,4 +1,4 @@
-class AccountsController < ApplicationController
+class UsersController < ApplicationController
   before_action :must_be_admin, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -39,7 +39,7 @@ class AccountsController < ApplicationController
   end
 
   def must_be_admin
-    unless current_user && current_user.rights == "admin"
+    unless current_user && current_user.admin == true
       redirect_to users_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
     end
   end
