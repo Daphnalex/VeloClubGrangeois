@@ -64,6 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'materialize-sass', '~> 1.0.0'
 gem 'bootstrap', '~> 4.1.3'
 gem 'devise'
+gem 'devise_invitable'
 gem 'ckeditor'
 gem "paperclip", "~> 6.0.0"
 gem 'jquery-rails'

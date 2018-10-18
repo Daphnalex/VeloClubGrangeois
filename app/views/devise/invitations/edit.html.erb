@@ -1,0 +1,23 @@
+<div class="container page-content album_page">
+  <div class="row">
+    <div class="col s11 m11 l11">
+      <h1>Modifier votre mot de passe</h1>
+    </div>
+  </div>
+  <div class="row">
+    <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
+      <%= devise_error_messages! %>
+      <%= f.hidden_field :invitation_token, readonly: true %>
+
+      <% if f.object.class.require_password_on_accepting %>
+      <p><%= f.label :mot_de_passe %><br />
+      <%= f.password_field :password %></p>
+
+      <p><%= f.label :confirmer_le_mot_de_passe %><br />
+      <%= f.password_field :password_confirmation %></p>
+      <% end %>
+
+      <%= f.submit "Envoyer le mot de passe", class:"waves-effect waves-light btn" %>
+    <% end %>
+  </div>
+</div>

@@ -23,7 +23,7 @@
       <% if current_user && current_user.admin == true %>
         <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Admin<i class="material-icons right">arrow_drop_down</i></a></li>
       <% elsif current_user && current_user.admin == false%>
-        <li style='width: 40%;'><%= link_to destroy_user_session_path, method: :delete do %>Se déconnecter<% end %></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Mon compte<i class="material-icons right">arrow_drop_down</i></a></li>
       <% else %>
         <li style='width: 40%;'><%= link_to new_user_session_path do %>Se connecter<% end %></li>
       <% end %>
@@ -35,6 +35,14 @@
 <ul id="dropdown1" class="dropdown-content">
   <li class="divider"></li>
   <li><%= link_to users_path do %>Gestion des utilisateurs<% end %></li>
+  <li><%= link_to destroy_user_session_path, method: :delete do %>Se déconnecter<% end %></li>
+</ul>
+<!-- Dropdown Structure -->
+<ul id="dropdown2" class="dropdown-content">
+  <li class="divider"></li>
+  <% if current_user %>
+    <li><%= link_to user_path(current_user.id) do %>Mes informations personnelles<% end %></li>
+  <% end %>
   <li><%= link_to destroy_user_session_path, method: :delete do %>Se déconnecter<% end %></li>
 </ul>
 

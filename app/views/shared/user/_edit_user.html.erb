@@ -1,16 +1,20 @@
-<%= form_for @user, url: invitation_path(@user) do |f| %>
+<%= form_for @user, html: {multipart: false} do |f| %>
+  <div class="field">
+    <%= f.label :prénom %>
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :nom %>
+    <%= f.text_field :lastname %>
+  </div>
   <div class="field">
     <%= f.label :adresse_mail %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email,:readonly => true %>
   </div>
   <div class="field">
     <%= f.label :droits %>
     <div class="inline">
-      <%= f.radio_button :rights, :checked => "member" %>
-      <div class="rights_elements">Membre</div>
-    </div>
-    <div class="inline">
-      <%= f.radio_button :rights, :checked => "admin" %>
+      <%= f.check_box :admin, :checked_value => true, :unchecked_value => false, :default => false %>
       <div class="rights_elements">Administrateur</div>
     </div>
   </div>

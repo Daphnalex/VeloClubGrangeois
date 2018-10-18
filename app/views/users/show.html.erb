@@ -1,0 +1,33 @@
+<div class="container page-content album_page">
+  <div class="row">
+    <div class="col s11 m11 l11">
+      <h1>Mes informations personnelles</h1>
+    </div>
+    <div class="col s1 m1 l1">
+      <%= render "shared/global/action-btn" , url: "users/#{@user.id}/edit", title:'Mettre à jour'  %>
+    </div>
+  </div>
+  <div class="row">
+    <%= form_for @user, html: {multipart: false} do |f| %>
+      <div class="field">
+        <%= f.label :prénom %>
+        <%= f.text_field :firstname,:readonly => true %>
+      </div>
+      <div class="field">
+        <%= f.label :nom %>
+        <%= f.text_field :lastname,:readonly => true %>
+      </div>
+      <div class="field">
+        <%= f.label :adresse_mail %>
+        <%= f.text_field :email,:readonly => true %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col m10">
+      <%= link_to edit_user_password_path, class: "waves-effect waves-light btn" do %>
+        <i class="material-icons left">keyboard_arrow_right</i>Modifier mon mot de passe
+      <% end %>
+    </div>
+  </div>
+</div>

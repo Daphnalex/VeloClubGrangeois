@@ -12,30 +12,53 @@ class UsersController < ApplicationController
   def create
 
     @user = User.new(user_params)
+    binding.pry
     if @user.valid?
+      binding.pry
       @user.save
       redirect_to users_path
     else
+      binding.pry
       render :new
     end
   end
 
   def edit
+    @user = User.find(params[:id])
+  end
 
+  def show
+    @user = User.find(params[:id])
+    binding.pry
   end
 
   def update
-
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      if current_user.admin == true
+        binding.pry
+        redirect_to users_path
+      else
+        binding.pry
+        redirect_to user_path(params[:id])
+      end
+    else
+      render :edit
+    end
   end
 
   def destroy
-
+    @user = User.find(params[:id]).destroy
+    if @user.destroy
+      flash[:success] = "Utilisateur supprimé"
+      redirect_to users_path()
+    end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :rights)
+    params.require(:user).permit(:email, :admin, :firstname, :lastname)
   end
 
   def must_be_admin
