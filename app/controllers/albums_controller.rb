@@ -13,7 +13,7 @@ class AlbumsController < ApplicationController
       filespath = album.album_attachments.map{
         |aa| aa.picture_url
       }
-      #binding.pry
+      #
       puts(filespath)
       time_filename = Time.now.strftime("%Y%m%d%H%M%S").to_s << ".zip"
       zipfile_name = "#{Rails.root}/tmp/albums_download/#{time_filename}"

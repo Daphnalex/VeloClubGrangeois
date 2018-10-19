@@ -21,7 +21,7 @@ fr:
       inactive: "Votre compte n'est pas encore activé."
     sessions:
       signed_in: "Réussite de la connexion."
-      signed_out: "Réussite de la deconnexion."
+      signed_out: "Réussite de la déconnexion."
     passwords:
       send_instructions: "Vous allez recevoir un courriel avec des instructions pour changer votre mot de passe."
       updated: "Votre mot de passe a été changé. Vous êtes maintenant connecté."
@@ -100,4 +100,4 @@ fr:
         back: "Retour"
     unlocks:
       new:
-        resend_unlock_instructions: "Renvoyez le mail pour déverrouiller mon compte"     
+        resend_unlock_instructions: "Renvoyez le mail pour déverrouiller mon compte"

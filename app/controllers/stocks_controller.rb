@@ -28,7 +28,7 @@ class StocksController < ApplicationController
       if @stock.errors.to_hash(:quantity)
         @error_stock_quantity = "Indiquer la quantité de t-shirt disponible"
       end
-      binding.pry
+      
       render :new
     end
   end
