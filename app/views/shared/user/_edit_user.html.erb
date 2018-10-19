@@ -7,18 +7,27 @@
     <%= f.label :nom %>
     <%= f.text_field :lastname %>
   </div>
+  <% if current_user.admin == true %>
   <div class="field">
     <%= f.label :adresse_mail %>
     <%= f.text_field :email,:readonly => true %>
   </div>
-  <div class="field">
-    <%= f.label :droits %>
-    <div class="inline">
-      <%= f.check_box :admin, :checked_value => true, :unchecked_value => false, :default => false %>
-      <div class="rights_elements">Administrateur</div>
+  <% else %>
+    <div class="field">
+      <%= f.label :adresse_mail %>
+      <%= f.text_field :email %>
     </div>
-  </div>
+  <% end %>
+  <% if current_user.admin == true %>
+    <div class="field">
+      <%= f.label :droits %>
+      <div class="inline">
+        <%= f.check_box :admin, :checked_value => true, :unchecked_value => false, :default => false %>
+        <div class="rights_elements">Administrateur</div>
+      </div>
+    </div>
+  <% end %>
   <div class="actions">
-    <%= f.submit "Ajouter l'email du membre", class:"waves-effect waves-light btn" %>
+    <%= f.submit "Enregistrer les modifications", class:"waves-effect waves-light btn" %>
   </div>
 <% end %>

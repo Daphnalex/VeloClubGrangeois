@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :invitations => 'users/invitations' } 
+  devise_for :users, :controllers => { :invitations => 'users/invitations' }
   resources :users, except: [:create]
   resources :album_attachments
   resources :galleries, as: :authenticated_root

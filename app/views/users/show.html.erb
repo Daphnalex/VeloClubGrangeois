@@ -4,7 +4,7 @@
       <h1>Mes informations personnelles</h1>
     </div>
     <div class="col s1 m1 l1">
-      <%= render "shared/global/action-btn" , url: "users/#{@user.id}/edit", title:'Mettre à jour'  %>
+      <%= render "shared/global/action-btn" , url: "#{@user.id}/edit", title:'Mettre à jour'  %>
     </div>
   </div>
   <div class="row">
@@ -25,9 +25,7 @@
   </div>
   <div class="row">
     <div class="col m10">
-      <%= link_to edit_user_password_path, class: "waves-effect waves-light btn" do %>
-        <i class="material-icons left">keyboard_arrow_right</i>Modifier mon mot de passe
-      <% end %>
+
     </div>
   </div>
 </div>
