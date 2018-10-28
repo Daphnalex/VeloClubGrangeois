@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :must_be_admin, only: [:index, :new, :create, :destroy]
 
   def index
-    @users = User.all
+    @users = User.where.not(id: 1)
   end
 
   def new
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 
     if params[:user][:password]
       @user.update_attributes(password_params)
-      binding.pry
+
       # Sign in the user by passing validation in case their password changed
       flash[:success] = "Nouveau mot de passe enregistré"
       render :show
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
       if current_user.admin == true
         redirect_to users_path
       else
-        binding.pry
+        
         render :show
       end
     else
@@ -71,6 +71,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def self.all_except(user)
+    where.not(id: user)
+  end
 
   def user_params
     params.require(:user).permit(:email, :admin, :firstname, :lastname)

@@ -2,7 +2,7 @@
   <div class="row">
     <div class="row">
       <div class="col m10">
-        <%= render "shared/global/return-btn", url: "/users", title: "Retour à la liste des membres" %>
+        <%= render "shared/global/return-btn", url: "/users/#{@user.id}", title: "Retour à mes informations" %>
       </div>
     </div>
     <div class="col s11 m11 l11">
@@ -10,9 +10,14 @@
     </div>
   </div>
   <div class="row">
-    <p>Si vous modifiez l'adresse mail d'un utilisateur une nouvelle invitation lui sera automatiquement envoyée.</p>
+    <%= render "shared/user/edit_user" %>
   </div>
   <div class="row">
-    <%= render "shared/user/edit_user" %>
+    <div class="col s11 m11 l11">
+      <h1>Changer mon mot de passe</h1>
+    </div>
+    <div class="col s12 m12 l12">
+      <%= render "shared/user/change_password" %>
+    </div>
   </div>
 </div>

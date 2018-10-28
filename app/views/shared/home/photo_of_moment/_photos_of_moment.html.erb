@@ -1,9 +1,11 @@
 <div class="row album">
-  <div class="row">
+  <div class="row col s12 m12 l12">
     <h1bis>Les photos du moment</h1bis>
-    <% if current_user && current_user.admin == true %>
-      <%= render "shared/global/action-btn" , url: 'pictures/1/edit', title:'Mettre à jour'  %>
-    <% end %>
+    <div class="hide-on-small-only">
+      <% if current_user && current_user.admin == true %>
+        <%= render "shared/global/action-btn" , url: 'pictures/1/edit', title:'Mettre à jour'  %>
+      <% end %>
+    </div>
   </div>
   <%= render "shared/home/photo_of_moment/albums_large_version" %>
   <%= render "shared/home/photo_of_moment/albums_small_version" %>

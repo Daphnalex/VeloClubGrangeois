@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :invitations => 'users/invitations' }
   resources :users, except: [:create]
-  resources :album_attachments
+  resources :album_attachments do
+    
+  end
+
   resources :galleries, as: :authenticated_root
   mount Ckeditor::Engine => '/ckeditor'
 

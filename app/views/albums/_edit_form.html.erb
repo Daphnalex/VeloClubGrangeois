@@ -1,0 +1,30 @@
+<%= form_for(@album, :html => { :multipart => true }) do |f| %>
+   <div class="field">
+     <%= f.label :titre %><br>
+     <%= f.text_field :title %>
+   </div>
+   <div class="row">
+     <% @album_attachments.each do |image| %>
+        <div class='col m2 l2'>
+          <div class="row edit_album_image">
+            <a href="#" class="btn-floating btn-large waves-effect waves-light right", onclick="delete_image(<%=@album_attachments%>,<%=image.picture%>)">
+              <i class="material-icons">
+                delete
+              </i>
+            </a>
+            <img src='<%=image.picture%>' />
+          </div>
+        </div>
+     <% end %>
+   </div>
+   <%= f.fields_for :album_attachments do |p| %>
+     <div class="field">
+       <%= p.label :images %><br>
+       <%= p.file_field :picture, :multiple => true, name: "album_attachments[picture][]" %>
+     </div>
+   <% end %>
+   <br/>
+   <div class="actions">
+     <%= f.submit "Editer l'album", class:"waves-effect waves-light btn" %>
+   </div>
+<% end %>

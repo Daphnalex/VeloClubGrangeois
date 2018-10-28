@@ -235,7 +235,9 @@
   });
 
 
-
+function delete_image(album,picture){
+  console.log('album', album);
+}
 
 function verif_nombre(champ){
 	var chiffres = new RegExp("[0-9]");

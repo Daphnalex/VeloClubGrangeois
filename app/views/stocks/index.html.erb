@@ -4,7 +4,7 @@
       <h1>Stocks de vêtements</h1>
     </div>
     <% if current_user && current_user.admin == true %>
-      <div class="col s1 m1 l1">
+      <div class="col m1 l1 hide-on-small-only">
         <%= render "shared/global/action-btn" , url: 'stocks/new', title:'Ajouter'  %>
       </div>
     <% end %>
@@ -43,7 +43,7 @@
               Mise à jour le <%=stock.date.strftime("%d/%m/%Y, %H:%M:%S")%>
             </div>
             <% if current_user && current_user.admin == true %>
-              <div class="card-action">
+              <div class="card-action hide-on-small-only">
                 <%= link_to edit_stock_path(stock.id) do%>Mettre à jour<%end%>
                 <%= link_to stock_path(stock.id), method: :delete do%>Supprimer<%end%>
               </div>

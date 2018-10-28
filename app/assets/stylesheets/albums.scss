@@ -101,3 +101,17 @@
   cursor: pointer;
   border: 1px solid white;
 }
+
+.edit_album_image{
+  height: 125px;
+  overflow: hidden;
+}
+
+.edit_album_image img{
+  width: 100%;
+  margin-top: -70px;
+}
+
+.edit_album_image a{
+  position: absolute;
+}

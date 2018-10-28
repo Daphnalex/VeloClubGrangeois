@@ -36,6 +36,26 @@ div.media-article>img{
   opacity: 0.8;
 }
 
+@media all and (max-width: 580px){
+
+  div.media-article{
+    height: 215px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: black;
+  }
+
+  div.media-article>img{
+    width: 100%;
+    transform: inherit !important;
+    opacity: 0.8;
+  }
+}
+
 .title-article{
   margin-top: -100px;
 }
@@ -82,4 +102,11 @@ form.new_article{
 
 .article-content{
     padding: 20px 30px 20px 30px;
+}
+
+@media all and (max-width: 400px){
+  .article-show .article-content img{
+    width: 100% !important;
+    height: auto !important;
+  }
 }

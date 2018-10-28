@@ -25,3 +25,39 @@ h5{
   color: $club-bleu;
   margin-bottom: 20px;
 }
+
+@media all and (max-width: 420px){
+  html{
+    font-size: 16px;
+  }
+
+  h1{
+    margin: 20px 20px 0px 20px;
+    font-size: 18px;
+    font-family: 'Open-Sans';
+    padding: 10px;
+    border-left: 10px solid $club-jaune;
+  }
+  h1bis{
+    color: white;
+    margin: 20px 20px 0px 20px;
+    font-size: 18px;
+    font-family: 'Open-Sans';
+    padding: 10px;
+    border-left: 10px solid $club-jaune;
+  }
+
+  h3 > a{
+    font-size: 18px !important;
+    text-align: center;
+  }
+
+  h5{
+    font-style: italic;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: $club-bleu;
+    margin-bottom: 15px;
+  }
+}

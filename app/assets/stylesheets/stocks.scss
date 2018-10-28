@@ -88,3 +88,10 @@ div.promotion{
 .card .card-image img{
   width: auto !important;
 }
+
+@media all and (max-width: 400px){
+  .card .card-image img{
+    width: 100% !important;
+    height: auto !important;
+  }
+}

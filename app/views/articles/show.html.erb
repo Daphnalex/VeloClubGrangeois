@@ -1,30 +1,31 @@
 <div class="container-fluid page-content background-article" style='background-image:url(<%= @article.picture %>)'>
   <div class="row article-show">
-    <div class="col m2">
+    <div class="col hide-on-small-only m2 l2">
     </div>
-    <div class="col m8 block-article">
-      <div class="row">
-        <div class="col m10">
+    <div class="col s12 m8 l8 block-article">
+      <div class="row col s12 m12 l12">
+        <div class="col s10 m10 l10">
           <%= render "shared/global/return-btn", url: "/articles", title: "Retour aux articles" %>
         </div>
         <% if current_user && current_user.admin == true %>
-          <div class="col m1">
+          <div class="col m1 l1 hide-on-small-only">
             <%= render "shared/global/action-btn", url: edit_article_path(@article), title: "Mettre à jour" %>
           </div>
         <% end %>
         <% if current_user && current_user.admin == true %>
-        <div class="col m1">
+        <div class="col m1 l1 hide-on-small-only">
           <%= render "shared/global/action-btn", url: "/articles/#{@article.id}",variable_data: @article, title: "Supprimer" %>
         </div>
         <% end %>
       </div>
-      <h1><%= @article.title %></h1>
-      <div class="article-content">
-        <div class="row">
-          <%= @article.content.html_safe %>
+      <div class="row col s12 m12 l12">
+        <h1><%= @article.title %></h1>
+        <div class="article-content">
+          <div class="row">
+            <%= @article.content.html_safe %>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>

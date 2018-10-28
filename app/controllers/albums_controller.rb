@@ -52,6 +52,7 @@ class AlbumsController < ApplicationController
 
   # GET /albums/1/edit
   def edit
+    @album_attachments = @album.album_attachments.all
   end
 
   # POST /albums

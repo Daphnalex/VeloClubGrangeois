@@ -4,7 +4,7 @@
       <h1>Sorties à venir</h1>
     </div>
     <% if current_user && current_user.admin == true %>
-      <div class="col m2">
+      <div class="col m2 l2 hide-on-small-only">
         <%= render "shared/global/action-btn" , url: 'exits/new', title:'Ajouter'  %>
       </div>
     <% end %>
