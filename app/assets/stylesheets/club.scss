@@ -112,6 +112,10 @@ hr{
   text-align: center;
   padding: 15px !important;
   margin: 15px;
+
+  a.btn-floating.btn-large {
+    width: 29px;
+  }
 }
 
 @media all and (min-width: 1300px){
