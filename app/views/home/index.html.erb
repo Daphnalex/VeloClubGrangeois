@@ -5,9 +5,12 @@
   <div class="row-fluid exits-month">
     <%= render "shared/home/exits/exits_of_month" %>
   </div>
-  <div class="row-fluid photos-moment">
-    <%= render "shared/home/photo_of_moment/photos_of_moment" %>
-  </div>
+  <% if @picture %>
+    <div class="row-fluid photos-moment">
+      <%= render "shared/home/photo_of_moment/photos_of_moment" %>
+    </div>
+  <% else %>
+  <% end %>
   <% if @stocks.size > 0 %>
     <div class="row-fluid stocks-promo">
       <%= render "shared/home/stocks/stocks" %>
