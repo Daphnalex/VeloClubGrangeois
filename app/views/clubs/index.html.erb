@@ -5,7 +5,7 @@
     </div>
     <% if current_user && current_user.admin == true %>
       <div class="col m2 hide-on-small-only">
-        <%= render "shared/global/action-btn" , url: 'presentations/1/edit', title:'Mettre à jour'  %>
+        <%= render "shared/global/action-btn" , url: edit_presentation_path(@presentation.id), title:'Mettre à jour'  %>
       </div>
     <% end %>
   </div>
