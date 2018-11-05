@@ -2,15 +2,12 @@ class UsersController < ApplicationController
   before_action :must_be_admin, only: [:index, :destroy]
 
   def index
-    @users = User.where.not(id: 1)
+    @users = User.where.not(email: EMAIL_ADDRESS_CLUB)
   end
 
   def edit
-    @user = current_user
-    if @user.admin == false
-
-      render :edit_member
-    end
+    @user = User.find(params[:id])
+    @for_admin = current_user.admin && @user != current_user
   end
 
   def show

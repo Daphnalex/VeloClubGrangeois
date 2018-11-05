@@ -2,11 +2,11 @@
   <div class="row">
     <div class="row">
       <div class="col m10">
-        <%= render "shared/global/return-btn", url: "/users/#{@user.id}", title: "Retour à mes informations" %>
+        <%= render "shared/global/return-btn", url: "/users/#{@user.id}", title: "Retour à mes informations#{@for_admin ? '' : ' personnelles'}" %>
       </div>
     </div>
     <div class="col s11 m11 l11">
-      <h1>Mettre à jour le membre</h1>
+      <h1><%= @for_admin ? "Mettre à jour le membre" : "Mettre à jour mes informations" %></h1>
     </div>
   </div>
   <div class="row">
