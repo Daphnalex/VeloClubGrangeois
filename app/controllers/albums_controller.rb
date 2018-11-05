@@ -8,27 +8,26 @@ class AlbumsController < ApplicationController
 # action method, stream the zip
 
 
-    def download # silly name but you get the idea
-      album = Album.find(params[:id])
-      filespath = album.album_attachments.map{
-        |aa| aa.picture_url
-      }
-      #
-      puts(filespath)
-      time_filename = Time.now.strftime("%Y%m%d%H%M%S").to_s << ".zip"
-      zipfile_name = "#{Rails.root}/tmp/albums_download/#{time_filename}"
-      puts(zipfile_name)
+  def download # silly name but you get the idea
+    album = Album.find(params[:id])
+    filespath = album.album_attachments.map{
+      |aa| aa.picture_url
+    }
+    #
+    puts(filespath)
+    time_filename = Time.now.strftime("%Y%m%d%H%M%S").to_s << ".zip"
+    zipfile_name = "#{Rails.root}/tmp/albums_download/#{time_filename}"
+    puts(zipfile_name)
 
-      Zip::File.open(zipfile_name, Zip::File::CREATE) do |zipfile|
-        filespath.each_with_index do |filepath, index|
-          ext = filepath.split('.').last
-          zipfile.add("image#{index+1}.#{ext}","#{Rails.root}/public#{filepath}")
-        end
+    Zip::File.open(zipfile_name, Zip::File::CREATE) do |zipfile|
+      filespath.each_with_index do |filepath, index|
+        ext = filepath.split('.').last
+        zipfile.add("image#{index+1}.#{ext}","#{Rails.root}/public#{filepath}")
       end
-      zip_data = File.read(zipfile_name)
-      send_data(zip_data, :type => 'application/zip', :filename => zipfile_name)
     end
-
+    zip_data = File.read(zipfile_name)
+    send_data(zip_data, :type => 'application/zip', :filename => zipfile_name)
+  end
 
 
   # GET /albums
@@ -98,19 +97,15 @@ class AlbumsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_album
-      @album = Album.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def album_params
-      params.require(:album).permit(:title, album_attachments_attributes: [:id, :album_id, :picture])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_album
+    @album = Album.find(params[:id])
+  end
 
-    def must_be_admin
-      unless current_user && current_user.admin == true
-        redirect_to albums_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
-      end
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def album_params
+    params.require(:album).permit(:title, album_attachments_attributes: [:id, :album_id, :picture])
+  end
+
 end

@@ -1,26 +1,8 @@
 class UsersController < ApplicationController
-  before_action :must_be_admin, only: [:index, :new, :create, :destroy]
+  before_action :must_be_admin, only: [:index, :destroy]
 
   def index
     @users = User.where.not(id: 1)
-  end
-
-  def new
-    @user = User.new
-  end
-
-  def create
-
-    @user = User.new(user_params)
-
-    if @user.valid?
-
-      @user.save
-      redirect_to users_path
-    else
-
-      render :new
-    end
   end
 
   def edit

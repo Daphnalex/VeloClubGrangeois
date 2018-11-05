@@ -50,14 +50,8 @@ class ReportsController < ApplicationController
 
   private
 
-    def report_params
-      params.require(:report).permit(:title, :document)
-    end
-
-    def must_be_admin
-      unless current_user && current_user.admin == true
-        redirect_to clubs_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
-      end
-    end
+  def report_params
+    params.require(:report).permit(:title, :document)
+  end
 
 end

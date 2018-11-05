@@ -56,14 +56,9 @@ class StocksController < ApplicationController
   end
 
   private
-    def stock_params
-      params.require(:stock).permit(:title, :front_image, :back_image, :quantity, :promotion, :home)
-    end
 
-    def must_be_admin
-      unless current_user && current_user.admin == true
-        redirect_to stocks_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
-      end
-    end
+  def stock_params
+    params.require(:stock).permit(:title, :front_image, :back_image, :quantity, :promotion, :home)
+  end
 
 end

@@ -51,9 +51,4 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :picture, :resume, :content, :slider)
   end
 
-  def must_be_admin
-    unless current_user && current_user.admin == true
-      redirect_to articles_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
-    end
-  end
 end

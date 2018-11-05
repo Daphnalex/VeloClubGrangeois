@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :must_be_admin, only: [:new, :create, :edit, :update, :destroy]
+  before_action :must_be_admin, only: [:new, :create, :edit, :update]
   
   def new
     @picture = Picture.new
@@ -29,13 +29,8 @@ class PicturesController < ApplicationController
 
   private
 
-    def picture_params
-      params.require(:picture).permit(:image_one, :image_two, :image_three, :image_four)
-    end
+  def picture_params
+    params.require(:picture).permit(:image_one, :image_two, :image_three, :image_four)
+  end
 
-    def must_be_admin
-      unless current_user && current_user.admin == true
-        redirect_to root_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
-      end
-    end
 end
