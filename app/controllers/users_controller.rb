@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-
   end
 
   def update
@@ -28,7 +27,6 @@ class UsersController < ApplicationController
       if current_user.admin == true
         redirect_to users_path
       else
-        
         render :show
       end
     else
@@ -38,7 +36,6 @@ class UsersController < ApplicationController
         render :edit_member
       end
     end
-
   end
 
   def destroy
