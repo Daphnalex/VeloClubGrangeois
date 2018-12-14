@@ -34,10 +34,6 @@ ActiveRecord::Schema.define(version: 2018_10_17_161335) do
     t.string "author"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "pictyre_file_name"
-    t.string "pictyre_content_type"
-    t.integer "pictyre_file_size"
-    t.datetime "pictyre_updated_at"
     t.string "picture_file_name"
     t.string "picture_content_type"
     t.integer "picture_file_size"
@@ -99,10 +95,6 @@ ActiveRecord::Schema.define(version: 2018_10_17_161335) do
   end
 
   create_table "pictures", force: :cascade do |t|
-    t.text "image_one"
-    t.text "image_two"
-    t.text "image_three"
-    t.text "image_four"
     t.string "image_one_file_name"
     t.string "image_one_content_type"
     t.integer "image_one_file_size"
