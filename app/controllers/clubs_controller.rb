@@ -1,5 +1,6 @@
 class ClubsController < ApplicationController
   before_action :must_be_admin, only: [:new, :create, :edit, :update, :destroy]
+  before_action :get_avatars, only: [:new, :edit]
   
   def index
     @clubs = Club.all
@@ -9,20 +10,10 @@ class ClubsController < ApplicationController
 
   def new
     @club = Club.new
-    dir = "#{Rails.root}/app/assets/images/avatars"
-    files = Dir[File.join(dir, '**', '*')]
-    @files = files.map{|file| file.split('/').last}
-    puts @files
   end
 
   def create
     @club = Club.new(club_params)
-    dir = "#{Rails.root}/app/assets/images/avatars"
-    files = Dir[File.join(dir, '**', '*')]
-    @files = files.map{|file| file.split('/').last}
-    avatar = params[:club][:avatar]
-    avatar = avatar.split("\"")
-    @club.avatar = avatar[1]
     if @club.valid?
       @club.save
       redirect_to clubs_path
@@ -42,24 +33,16 @@ class ClubsController < ApplicationController
 
   def edit
     @club = Club.find(params[:id])
-    dir = "#{Rails.root}/app/assets/images/avatars"
-    files = Dir[File.join(dir, '**', '*')]
-    @files = files.map{|file| file.split('/').last}
-    puts @files
   end
 
   def update
     @club = Club.find(params[:id])
-    avatar = params[:club][:avatar]
-    avatar = avatar.split("\"")
-    @club.avatar = avatar[1]
     if @club.update_attributes(club_params)
       redirect_to clubs_path
     else
       render :edit
     end
   end
-
 
   def show
     @club = Club.find(params[:id])
@@ -76,13 +59,19 @@ class ClubsController < ApplicationController
   end
 
   private
-    def club_params
-      params.require(:club).permit(:title, :name, :avatar)
-    end
 
-    def must_be_admin
-      unless current_user && current_user.admin == true
-        redirect_to clubs_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
-      end
+  def club_params
+    params.require(:club).permit(:title, :name, :avatar, :phone, :mail)
+  end
+
+  def must_be_admin
+    unless current_user && current_user.admin == true
+      redirect_to clubs_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
     end
+  end
+
+  def get_avatars
+    @files = Dir.entries("#{Rails.root}/app/assets/images/avatars") - [".", ".."]
+  end
+
 end

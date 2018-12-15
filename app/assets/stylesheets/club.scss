@@ -165,6 +165,12 @@ hr{
 .field.checkbox.avatar img{
   width: 128px;
   height: 128px;
+
+  &.active {
+    border: 5px solid #fadd00;
+    border-radius: 50%;
+    width: 133px;
+  }
 }
 
 .presentation_club{

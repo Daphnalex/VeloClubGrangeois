@@ -5,10 +5,10 @@
   </div>
   <div class="field checkbox avatar">
     <%= f.label :choisir_son_avatar, class: "label_checkbox" %>
-    <% @files.each do |file| %>
-      <div class="inline">
-        <%= f.radio_button :avatar, :checked => file %>
-        <%= image_tag "avatars/#{file}" %>
+    <% @files.each_with_index do |file, index| %>
+      <div class="div-avatar inline" onclick="$('#avatar_<%= index %>').prop('checked', true);">
+        <%= f.radio_button :avatar, file, checked: index == 0, id: "avatar_#{index}" %>
+        <%= image_tag("avatars/#{file}", class: "avatar-image#{' active' if index == 0}") %>
       </div>
     <% end %>
   </div>
