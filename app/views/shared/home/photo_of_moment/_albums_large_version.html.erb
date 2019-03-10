@@ -2,23 +2,23 @@
 <div class="row photos hide-on-small-only">
   <div class="col m9 l9 large">
     <a class="modal-trigger" href="#modal1">
-      <%= image_tag @picture.image_one.url, class:"current-image picture1", alt:"Image album : #{@picture.image_one}" %>
+      <%= image_tag @picture.image_one.url, class: "current-image picture1", alt: "Image album : #{@picture.image_one}" if @picture %>
     </a>
   </div>
   <div class="col m3 l3 small">
     <a class="modal-trigger" href="#modal1">
       <div class="small-image">
-        <%= image_tag @picture.image_two.url, class:"current-image picture2", alt:"Image album : #{@picture.image_two}" %>
+        <%= image_tag @picture.image_two.url, class: "current-image picture2", alt: "Image album : #{@picture.image_two}" if @picture %>
       </div>
     </a>
     <a class="modal-trigger" href="#modal1">
       <div class="small-image">
-        <%= image_tag @picture.image_three.url, class:"current-image picture3", alt:"Image album : #{@picture.image_three}" %>
+        <%= image_tag @picture.image_three.url, class: "current-image picture3", alt: "Image album : #{@picture.image_three}" if @picture %>
       </div>
     </a>
     <a class="modal-trigger" href="#modal1">
       <div class="small-image">
-        <%= image_tag @picture.image_four.url, class:"current-image picture4", alt:"Image album : #{@picture.image_four}" %>
+        <%= image_tag @picture.image_four.url, class: "current-image picture4", alt: "Image album : #{@picture.image_four}" if @picture %>
       </div>
     </a>
   </div>
