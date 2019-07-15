@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+  	@homepage = true
     @current_user = current_user
 
     @news = Article.where(slider: true)

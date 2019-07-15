@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>VcgRuby</title>
+    <title>Vélo club grangeois</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="robots" content="noindex, nofollow">
+    <% if @homepage %>
+      <meta name="description" content="Site officiel du club de vélo des Granges le Roi">
+    <% else %>
+      <meta name="robots" content="noindex, nofollow">
+    <% end %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
