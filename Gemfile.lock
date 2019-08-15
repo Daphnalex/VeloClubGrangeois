@@ -156,7 +156,7 @@ GEM
     msgpack (1.2.4)
     multi_json (1.13.1)
     mustermann (1.0.3)
-    mysql2 (0.5.2)
+    mysql2 (0.4.10)
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
@@ -293,7 +293,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   mail_form
   materialize-sass (~> 1.0.0)
-  mysql2
+  mysql2 (= 0.4.10)
   owlcarousel-rails
   paperclip (~> 6.0.0)
   pry
