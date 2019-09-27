@@ -3,10 +3,10 @@
     Images :
   </div>
   <br/>
-  <%= @picture.image_one_file_name %><br/>
-  <%= @picture.image_two_file_name %><br/>
-  <%= @picture.image_three_file_name %><br/>
-  <%= @picture.image_four_file_name %><br/>
+  <%= @picture.try(:image_one_file_name) %><br/>
+  <%= @picture.try(:image_two_file_name) %><br/>
+  <%= @picture.try(:image_three_file_name) %><br/>
+  <%= @picture.try(:image_four_file_name) %><br/>
   </div>
 <%= form_for @picture do |f| %>
   <div class="field">

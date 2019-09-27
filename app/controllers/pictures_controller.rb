@@ -15,7 +15,8 @@ class PicturesController < ApplicationController
   end
 
   def edit
-    @picture = Picture.find(1)
+    @picture = Picture.find_by_id(1)
+    @picture = Picture.new if @picture.nil?
   end
 
   def update
