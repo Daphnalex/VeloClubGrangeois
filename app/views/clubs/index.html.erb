@@ -9,7 +9,9 @@
       </div>
     <% end %>
   </div>
-  <div class="row presentation_club"><%= @presentations[0].content.html_safe %></div>
+  <% if !@presentations.empty? %>
+    <div class="row presentation_club"><%= @presentations[0].content.html_safe %></div>
+  <% end %>
   <div class="row">
     <div class="col m10">
       <h1>Membres du bureau</h1>
