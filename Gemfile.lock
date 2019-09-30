@@ -90,9 +90,6 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    haml (5.1.2)
-      temple (>= 0.8.0)
-      tilt
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -233,7 +230,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    temple (0.8.1)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (0.20.0)
@@ -268,7 +264,6 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise_invitable
-  haml
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails

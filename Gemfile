@@ -76,4 +76,3 @@ gem "owlcarousel-rails"
 gem 'carrierwave'
 gem 'rubyzip'
 gem 'bigdecimal'
-gem 'haml'
