@@ -1,0 +1,26 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %title Vélo club grangeois
+    = csrf_meta_tags
+    = csp_meta_tag
+    - if @homepage
+      %meta{name: "description", content: "Site officiel du club de vélo des Granges le Roi"}
+    - else
+      %meta{name: "robots", content: "noindex, nofollow"}
+    = stylesheet_link_tag("application", media: "all", "data-turbolinks-track": "reload")
+    %link{href: "https://fonts.googleapis.com/css?family=Open+Sans", rel: "stylesheet"}
+    %link{href: "https://fonts.googleapis.com/css?family=Roboto", rel: "stylesheet"}
+    = javascript_include_tag('application', 'data-turbolinks-track': 'reload')
+
+    - if content_for?(:head)
+      = yield(:head)
+
+  %body.container-fluid
+    = render "shared/global/menu"
+    %p.notice
+      = notice
+    %p.alert
+      = alert
+    = yield
+    = render "shared/global/footer"
