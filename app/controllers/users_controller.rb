@@ -46,7 +46,7 @@ class UsersController < ApplicationController
       flash[:success] = "Nouveau mot de passe enregistré"
       render :show
     elsif @user.update_attributes(user_params)
-      if current_user.admin == true
+      if current_user_is_admin?
         redirect_to users_path
       else
         
@@ -86,7 +86,7 @@ class UsersController < ApplicationController
   end
 
   def must_be_admin
-    unless current_user && current_user.admin == true
+    unless current_user_is_admin?
       redirect_to users_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
     end
   end

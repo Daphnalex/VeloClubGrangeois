@@ -8,7 +8,7 @@
           <div class="col s10 m8 l10">
             <h1><%= @album.title %></h1>
           </div>
-          <% if current_user && current_user.admin == true %>
+          <% if current_user_is_admin? %>
             <div class="hide-on-small-only col m2 l1">
               <%= render "shared/global/action-btn", url: "/albums/#{@album.id}",variable_data: @album, title: "Supprimer" %>
             </div>

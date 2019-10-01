@@ -3,7 +3,7 @@
     <div class="col s11 m11 l11">
       <h1>Retours sur les évènements passés</h1>
     </div>
-    <% if current_user && current_user.admin == true %>
+    <% if current_user_is_admin? %>
       <div class="col m1 l1 hide-on-small-only">
         <%= render "shared/global/action-btn" , url: 'articles/new', title:'Ajouter'  %>
       </div>

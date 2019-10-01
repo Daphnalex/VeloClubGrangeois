@@ -52,7 +52,7 @@ class ArticlesController < ApplicationController
   end
 
   def must_be_admin
-    unless current_user && current_user.admin == true
+    unless current_user_is_admin?
       redirect_to articles_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
     end
   end

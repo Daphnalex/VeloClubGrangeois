@@ -20,9 +20,9 @@
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li style='width: 30%;'><%= link_to stocks_path do %>Stocks<% end %></li>
       <li style='width: 30%;'><%= link_to new_contact_path do %>Contact<% end %></li>
-      <% if current_user && current_user.admin == true %>
+      <% if current_user_is_admin? %>
         <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Admin<i class="material-icons right">arrow_drop_down</i></a></li>
-      <% elsif current_user && current_user.admin == false%>
+      <% elsif !current_user_is_admin?%>
         <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Mon compte<i class="material-icons right">arrow_drop_down</i></a></li>
       <% else %>
         <li style='width: 40%;'><%= link_to new_user_session_path do %>Se connecter<% end %></li>

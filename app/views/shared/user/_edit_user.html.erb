@@ -7,7 +7,7 @@
     <%= f.label :nom %>
     <%= f.text_field :lastname %>
   </div>
-  <% if current_user.admin == true %>
+  <% if current_user_is_admin? %>
   <div class="field">
     <%= f.label :adresse_mail %>
     <%= f.text_field :email,:readonly => true %>
@@ -18,7 +18,7 @@
       <%= f.text_field :email %>
     </div>
   <% end %>
-  <% if current_user.admin == true %>
+  <% if current_user_is_admin? %>
     <div class="field">
       <%= f.label :droits %>
       <div class="inline">
