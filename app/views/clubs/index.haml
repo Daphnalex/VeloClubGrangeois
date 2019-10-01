@@ -1,0 +1,67 @@
+.container.page-content
+  .row
+    .col.m10
+      %h1 Présentation
+    - if current_user_is_admin?
+      .col.m2.hide-on-small-only
+        = render "shared/global/action-btn" , url: 'presentations/1/edit', title: 'Mettre à jour'
+  - if @presentation.present?
+    .row.presentation_club= @presentation.content.html_safe
+  .row
+    .col.m10
+      %h1 Membres du bureau
+    - if current_user_is_admin?
+      .col.m2.hide-on-small-only
+        = render "shared/global/action-btn" , url: 'clubs/new', title: 'Ajouter'
+  .row
+    - @clubs.each do |club|
+      .col.member-club
+        .row.icon
+          .col.s12.m12.l12
+            .col.s6.m8.l8
+            - if current_user_is_admin?
+              .col.s3.m2.l2.hide-on-small-only
+                = render 'shared/global/action-btn', url: edit_club_path(club.id), title: 'Mettre à jour'
+              .col.m2.l2.hide-on-small-only
+                = render "shared/global/action-btn", url: "/clubs/#{club.id}", variable_data: @club, title: "Supprimer"
+        .row.title
+          = club.title
+        .row.avatar
+          = image_tag "avatars/#{club.avatar}"
+        .row.name
+          = club.name
+        .row.info
+          - if club.phone
+            = num_to_phone(club.phone)
+        .row.info
+          = club.mail
+  .row.life-club
+    .row
+      .col.m10
+        %h1 La vie du club
+      - if current_user_is_admin?
+        .col.m2.hide-on-small-only
+          = render "shared/global/action-btn" , url: 'reports/new', title: 'Ajouter'
+    %br
+    .row.content
+      %table.club_table.striped
+        %tbody
+          - @reports.each do |report|
+            %tr
+              %td{:width => "96%"}
+                .report-title
+                  = report.title
+              %td.center{:width => "2%"}
+                .report-document
+                  = render "shared/global/action-btn", url: report.document.url, title: "Télécharger"
+              %td.center.hide-on-small-only{:width => "2%"}
+                - if current_user_is_admin?
+                  .report-update.hide-on-small-only
+                    = render 'shared/global/action-btn', url: edit_report_path(report.id), title: 'Mettre à jour'
+              %td.center.hide-on-small-only{:width => "2%"}
+                - if current_user_is_admin?
+                  .report-delete
+                    = render "shared/global/action-btn", url: "/reports/#{report.id}", variable_data: @report, title: "Supprimer"
+    .row
+      .col.m12
+        = paginate @reports, theme: ''
