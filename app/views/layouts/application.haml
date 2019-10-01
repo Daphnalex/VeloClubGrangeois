@@ -18,9 +18,11 @@
 
   %body.container-fluid
     = render "shared/global/menu"
-    %p.notice
-      = notice
-    %p.alert
-      = alert
+    - if notice.present?
+      %p.notice
+        = notice
+    - if alert.present?
+      %p.alert
+        = alert
     = yield
     = render "shared/global/footer"
