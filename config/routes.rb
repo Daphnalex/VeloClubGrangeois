@@ -25,5 +25,5 @@ Rails.application.routes.draw do
     end
   end
   resources :mentions, only: [:index]
-  resources :presentations, only: [:edit, :update]
+  resources :presentations, only: [:create, :edit, :update]
 end
