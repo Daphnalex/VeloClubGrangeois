@@ -1,0 +1,10 @@
+.container-fluid.home.page-content
+  .row-fluid
+    = render partial: "slider_articles"
+  .row-fluid.exits-month
+    = render "shared/home/exits/exits_of_month"
+  .row-fluid.photos-moment
+    = render "shared/home/photo_of_moment/photos_of_moment"
+  - if @stocks.size > 0
+    .row-fluid.stocks-promo
+      = render "shared/home/stocks/stocks"
