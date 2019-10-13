@@ -1,0 +1,14 @@
+.articles_carousel.carousel.carousel-slider.center
+  .carousel-fixed-item.center
+    = link_to("Tous les articles", articles_path, class:"btn waves-effect grey-text darken-text-2")
+
+  - @news.each do |article|
+    .carousel-item.white-text{href: "#one!"}
+      .row.carousel-title
+        = link_to(article_path(article)) do
+          .col.s12.m12.l12
+            %h2= article.title
+      .row.carousel-resume
+        .hide-on-small-only.col.m12.l12
+          %p.white-text= article.resume
+      = image_tag(article.picture, class: "image_article", alt: "Image de : #{article.title}")

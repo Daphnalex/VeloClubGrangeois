@@ -17,7 +17,7 @@
       = yield(:head)
 
   %body.container-fluid
-    = render partial: "layouts/navbar"
+    = render "layouts/navbar"
     - if notice.present?
       %p.notice
         = notice
