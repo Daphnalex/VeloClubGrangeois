@@ -1,0 +1,64 @@
+%nav
+  .nav-wrapper
+    = link_to("#", "data-target": "mobile-demo", class: "sidenav-trigger") do
+      %i.material-icons menu
+    = link_to(root_path, class: "brand-logo center") do
+      = image_tag("logo.png", class: "logo")
+
+    %ul#nav-mobile.left.hide-on-med-and-down
+      - if user_signed_in?
+        %li{style: "width: 25%;"}= link_to("Club", clubs_path)
+        %li{style: "width: 25%;"}= link_to("Articles", articles_path)
+        %li{style: "width: 25%;"}= link_to("Sorties", exits_path)
+        %li{style: "width: 25%;"}= link_to("Albums", albums_path)
+      - else
+        %li{style: "width: 30%;"}= link_to("Club", clubs_path)
+        %li{style: "width: 30%;"}= link_to("Articles", articles_path)
+        %li{style: "width: 30%;"}= link_to("Sorties", exits_path)
+
+    %ul#nav-mobile.right.hide-on-med-and-down
+      %li{style: "width: 30%;"}= link_to("Stocks", stocks_path)
+      %li{style: "width: 30%;"}= link_to("Contact", new_contact_path)
+      - if current_user_is_admin?
+        %li
+          %a.dropdown-trigger{href: "#!", "data-target": "dropdown1"}
+            Admin
+            %i.material-icons.right arrow_drop_down
+      - elsif current_user
+        %li
+          %a.dropdown-trigger{href: "#!", "data-target": "dropdown2"}
+            Mon compte
+            %i.material-icons.right arrow_drop_down
+      - else
+        %li{style: "width: 40%;"}= link_to("Se connecter", new_user_session_path)
+
+/ Dropdown Structure
+%ul#dropdown1.dropdown-content
+  %li.divider
+  %li.hide-on-small-only= link_to("Gestion des utilisateurs", users_path)
+  - if current_user
+    %li.hide-on-small-only
+      = link_to("Mes informations personnelles", user_path(current_user.id))
+  %li= link_to("Se déconnecter", destroy_user_session_path, method: :delete)
+
+/ Dropdown Structure
+%ul#dropdown2.dropdown-content
+  %li.divider
+  - if current_user
+    %li.hide-on-small-only= link_to("Mes informations personnelles", user_path(current_user.id))
+  %li= link_to("Se déconnecter", destroy_user_session_path, method: :delete)
+
+%ul#mobile-demo.sidenav
+  %li= link_to("Accueil", root_path)
+  %li= link_to("Le club", clubs_path)
+  %li= link_to("Les articles", articles_path)
+  %li= link_to("Les sorties", exits_path)
+  - if user_signed_in?
+    %li= link_to("L'album", albums_path)
+  %li= link_to("Les stocks", stocks_path)
+  %li= link_to("Contact", new_contact_path)
+  %li.divider
+  - if user_signed_in?
+    %li= link_to("Se déconnecter", destroy_user_session_path, method: :delete)
+  - else
+    %li= link_to("Se connecter", new_user_session_path)

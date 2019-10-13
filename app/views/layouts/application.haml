@@ -17,7 +17,7 @@
       = yield(:head)
 
   %body.container-fluid
-    = render "shared/global/menu"
+    = render partial: "layouts/navbar"
     - if notice.present?
       %p.notice
         = notice
