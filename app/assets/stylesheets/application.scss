@@ -33,7 +33,6 @@ $secondary-color: color("yellow", "base") !default;
 
  .page-content {
    z-index: 0;
-   margin-top: 78px !important;
  }
 
  body {
@@ -55,6 +54,16 @@ nav{
   border-bottom: 10px solid $club-jaune;
   top: 0;
   z-index: 200;
+
+  ul {
+    li.li-nav, a.a-nav {
+      padding: 0 !important;
+    }
+
+    &.dropdown-content li > a {
+      font-size: 14px;
+    }
+  }
 }
 
 nav ul.left{

@@ -24,7 +24,7 @@
 
 
   $( document ).on('turbolinks:load', function() {
-    console.log("Jquery works !");
+    // console.log("Jquery works !");
 
     $( ".datepicker" ).datepicker({
       altField: ".datepicker",
@@ -203,13 +203,13 @@
     });
 
     if ($('p.alert').text() == ""){
-      console.log('pas de message');
+      // console.log('pas de message');
       $('p.alert').css({
         'display': 'none',
         'margin-top': '0px'
       });
     } else {
-      console.log('message', $('p.alert').text());
+      // console.log('message', $('p.alert').text());
       $('.page-content').css({
         'margin-top': '40px'
       });
@@ -217,13 +217,13 @@
     };
 
     if ($('p.notice').text() == ""){
-      console.log('pas de message');
+      // console.log('pas de message');
       $('p.notice').css({
         'display': 'none',
         'margin-top': '0px'
       });
     } else {
-      console.log('message', $('p.alert').text());
+      // console.log('message', $('p.alert').text());
       $('.page-content').css({
         'margin-top': '40px'
       });

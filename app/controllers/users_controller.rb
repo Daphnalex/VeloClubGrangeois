@@ -87,7 +87,7 @@ class UsersController < ApplicationController
 
   def must_be_admin
     unless current_user_is_admin?
-      redirect_to users_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
+      redirect_to root_path, notice: "Vous n'avez pas les droits pour effectuer cette action."
     end
   end
 
