@@ -1,0 +1,13 @@
+- case title
+- when "Mettre à jour"
+  = link_to(url, class: "btn-action btn-floating btn-large waves-effect waves-light right",  title: title) do
+    %i.material-icons create
+- when "Ajouter"
+  = link_to(url, class: "add btn-action btn-floating btn-large waves-effect waves-light right",  title: title) do
+    %i.material-icons add
+- when "Supprimer"
+  = link_to url, data: variable_data, method: :delete, data: {confirm: "Confirmer la suppression ?"}, class: "btn-action btn-floating btn-large waves-effect waves-light right",  title: title do
+    %i.material-icons delete
+- when "Télécharger"
+  = link_to(url, class: "btn-action btn-floating btn-large waves-effect waves-light right", target: :_blank, title: title) do
+    %i.material-icons file_download

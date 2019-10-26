@@ -1,0 +1,12 @@
+%table.striped
+  %thead
+    %tr
+      %th Date
+      %th Lieu
+      %th.hide-on-small-only
+  %tbody
+    - @exits_month.each do |exit|
+      %tr
+        %td= exit.date.strftime('%d/%m/%Y')
+        %td= exit.city
+        %td.hide-on-small-only= exit.description.html_safe

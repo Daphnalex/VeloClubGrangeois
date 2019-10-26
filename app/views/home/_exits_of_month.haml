@@ -1,0 +1,11 @@
+.col.s12.m12.l12
+  %h1 Les sorties du mois
+.row.show-on-medium-and-down
+  .col.m2
+  .col.m8.exit-month-image.small
+    = image_tag("road-sport-pxhere.jpg")
+.row
+  .exit-month-table.col.s11.m11.l6
+    = render "table_exits"
+  .exit-month-image.hide-on-med-and-down.col.l6
+    = image_tag("road-sport-pxhere.jpg")

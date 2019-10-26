@@ -1,0 +1,12 @@
+.row.album
+  .row.col.s12.m12.l12
+    %h1bis Les photos du moment
+    .hide-on-small-only
+      - if current_user_is_admin?
+        = render "shared/action-btn" , url: 'pictures/1/edit', title: 'Mettre à jour'
+  = render "shared/home/photo_of_moment/albums_large_version"
+  = render "shared/home/photo_of_moment/albums_small_version"
+  .row.button-album
+    .col.s3.m4.l5
+    .col.s6.m4.l2
+      = link_to("Voir les photos", root_path, class:"btn waves-effect grey-text darken-text-2")
