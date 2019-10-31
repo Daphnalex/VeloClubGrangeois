@@ -20,12 +20,12 @@
         <td><%=  %></td>
         <td>
           <div class="user-update">
-            <%= render 'shared/global/action-btn', url: edit_user_path(user.id), title: 'Mettre à jour'%>
+            <%= render 'shared/action-btn', url: edit_user_path(user.id), title: 'Mettre à jour'%>
           </div>
         </td>
         <td>
           <div class="user-delete">
-            <%= render "shared/global/action-btn", url: "/users/#{user.id}",variable_data: @user, title: "Supprimer" %>
+            <%= render "shared/action-btn", url: "/users/#{user.id}",variable_data: @user, title: "Supprimer" %>
           </div>
         </td>
       </tr>

@@ -9,12 +9,12 @@
         </div>
         <% if current_user_is_admin? %>
           <div class="col m1 l1 hide-on-small-only">
-            <%= render "shared/global/action-btn", url: edit_article_path(@article), title: "Mettre à jour" %>
+            <%= render "shared/action-btn", url: edit_article_path(@article), title: "Mettre à jour" %>
           </div>
         <% end %>
         <% if current_user_is_admin? %>
         <div class="col m1 l1 hide-on-small-only">
-          <%= render "shared/global/action-btn", url: "/articles/#{@article.id}",variable_data: @article, title: "Supprimer" %>
+          <%= render "shared/action-btn", url: "/articles/#{@article.id}",variable_data: @article, title: "Supprimer" %>
         </div>
         <% end %>
       </div>
