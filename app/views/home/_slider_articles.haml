@@ -12,4 +12,4 @@
         .row.carousel-resume
           .hide-on-small-only.col.m12.l12
             %p.white-text= article.resume
-        = image_tag(article.picture, class: "image_article", alt: "Image de : #{article.title}")
+        %img{src: article.picture, alt: "Image de : #{article.title}"}
