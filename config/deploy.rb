@@ -46,3 +46,5 @@ set :keep_releases, 3
 set :rails_env, 'production'
 
 set :current_directory, "web_app"
+
+set :passenger_restart_with_touch, true
