@@ -1,4 +1,3 @@
-
 <div class="col s12 m12 l12 exit-card">
   <div class="card blue-club">
     <div class="card-content white-text">
@@ -8,19 +7,19 @@
         </div>
         <% if current_user_is_admin? %>
           <div class="col m1 l1 no_bg_color hide-on-small-only">
-            <%= render "shared/action-btn", url: "/exits/#{exit.id}/edit", variable_data: @exit, title: "Mettre à jour" %>
+            <%= render "shared/action-btn", url: edit_exit_path(exit), variable_data: @exit, title: "Mettre à jour" %>
           </div>
         <% end %>
         <% if current_user_is_admin? %>
           <div class="col m1 l1 hide-on-small-only no_bg_color">
-            <%= render "shared/action-btn", url: "/exits/#{exit.id}", variable_data: @exit, title: "Supprimer" %>
+            <%= render "shared/action-btn", url: exit_path(exit), variable_data: @exit, title: "Supprimer" %>
           </div>
         <% end %>
         <p class="col s12 m12 l12"><%= exit.description.html_safe %></p>
       </div>
     </div>
     <div class="card-action row col s12">
-      <div class="col s6 m6 l6"><span class="info-title">Lieu : </span><span class="info"><%= exit.city%></span></div>
+      <div class="col s6 m6 l6"><span class="info-title">Lieu : </span><span class="info"><%= exit.city %></span></div>
       <div class="col s6 m6 l6"><span class="info-title">Date : </span><span class="info"><%= exit.date.strftime('%d/%m/%Y') %></span></div>
     </div>
   </div>

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :articles
-  resources :exits
+  resources :exits, path: "sorties", path_names: {new: "creer", edit: "modifier"}
   resources :clubs
   resources :reports, except: :index
   resources :stocks

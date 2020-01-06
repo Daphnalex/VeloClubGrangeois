@@ -5,7 +5,7 @@
     </div>
     <% if current_user_is_admin? %>
       <div class="col m2 l2 hide-on-small-only">
-        <%= render "shared/action-btn" , url: 'exits/new', title:'Ajouter'  %>
+        <%= render "shared/action-btn" , url: new_exit_path, title:'Ajouter'  %>
       </div>
     <% end %>
   </div>
