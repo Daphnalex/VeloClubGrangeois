@@ -2,10 +2,11 @@
   .navbar-fixed
     %nav
       .nav-wrapper
-        = link_to("#", "data-target": "mobile-demo", class: "sidenav-trigger") do
+        = link_to("#", "data-target": "nav-mobile", class: "sidenav-trigger") do
           %i.material-icons menu
         = link_to(root_path, class: "brand-logo center") do
           = image_tag("logo.png", class: "logo")
+
         %ul.left.row.hide-on-med-and-down
           %li.col.li-nav{class: user_signed_in? ? "s3" : "s4"}= link_to("Club", clubs_path, class: "a-nav")
           %li.col.li-nav{class: user_signed_in? ? "s3" : "s4"}= link_to("Articles", articles_path, class: "a-nav")
@@ -27,20 +28,20 @@
             - else
               = link_to("Se connecter", new_user_session_path, class: "a-nav")
 
-    %ul#mobile-demo.sidenav
-      %li= link_to("Accueil", root_path)
-      %li= link_to("Le club", clubs_path)
-      %li= link_to("Les articles", articles_path)
-      %li= link_to("Les sorties", exits_path)
-      - if user_signed_in?
-        %li= link_to("L'album", albums_path)
-      %li= link_to("Les stocks", stocks_path)
-      %li= link_to("Contact", new_contact_path)
-      %li.divider
-      - if user_signed_in?
-        %li= link_to("Se déconnecter", destroy_user_session_path, method: :delete)
-      - else
-        %li= link_to("Se connecter", new_user_session_path)
+  %ul#nav-mobile.sidenav.sidenav-fixed.hide-on-large-only
+    %li= link_to("Accueil", root_path)
+    %li= link_to("Le club", clubs_path)
+    %li= link_to("Les articles", articles_path)
+    %li= link_to("Les sorties", exits_path)
+    - if user_signed_in?
+      %li= link_to("L'album", albums_path)
+    %li= link_to("Les stocks", stocks_path)
+    %li= link_to("Contact", new_contact_path)
+    %li.divider
+    - if user_signed_in?
+      %li= link_to("Se déconnecter", destroy_user_session_path, method: :delete)
+    - else
+      %li= link_to("Se connecter", new_user_session_path)
 
   - if current_user_is_admin?
     / Dropdown Structure
